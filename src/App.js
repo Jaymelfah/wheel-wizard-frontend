@@ -1,9 +1,15 @@
 import React from 'react';
 import './App.css';
+import SideBar from './components/sidebar/SideBar';
 
 function App() {
   return (
-    <div className="App">Hello</div>
+    <div className="app">
+      <div className="d-flex flex-row">
+        <SideBar />
+        <div className="bg-primary">Hello</div>
+      </div>
+    </div>
   );
 }
 
