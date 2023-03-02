@@ -7,7 +7,6 @@ function App() {
     <div className="app">
       <div className="d-flex flex-row">
         <SideBar />
-        <div className="bg-primary">Hello</div>
       </div>
     </div>
   );
