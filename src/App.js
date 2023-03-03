@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ReservationForm from './components/reservationForm/ReservationForm';
 import SideBar from './components/sidebar/SideBar';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="app">
       <div className="d-flex flex-row">
         <SideBar />
+        <ReservationForm />
       </div>
     </div>
   );
