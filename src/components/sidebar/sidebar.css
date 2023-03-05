@@ -6,6 +6,7 @@
   left: -240px;
   transition: 200ms ease-in-out;
 }
+
 .sidebar-active {
   height: 100vh;
   position: relative;
@@ -19,10 +20,11 @@
   text-align: center;
   color: #4f4f4f;
 }
+
 .toggle-sidebar-btn {
   position: absolute;
   bottom: 78px;
-  right: -76px;
+  right: -59px;
   background-color: #98c10f;
   width: 76px;
   border-bottom-right-radius: 40px;
@@ -31,5 +33,5 @@
   display: flex;
   justify-content: end;
   border: none;
-  padding: 8px 0px;
+  padding: 8px 0;
 }
