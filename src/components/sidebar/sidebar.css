@@ -1,4 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Dr+Sugiyama&display=swap");
+
 .sidebar-container {
-  width: 20rem;
   height: 100vh;
+  position: relative;
+  left: -240px;
+  transition: 200ms ease-in-out;
+}
+
+.sidebar-active {
+  height: 100vh;
+  position: relative;
+  left: 0;
+}
+
+.sidebar-title {
+  font-family: "Dr Sugiyama", cursive;
+  text-decoration: underline;
+  transform: rotate(-15deg);
+  text-align: center;
+  color: #4f4f4f;
+}
+
+.toggle-sidebar-btn {
+  position: absolute;
+  bottom: 78px;
+  right: -59px;
+  background-color: #98c10f;
+  width: 76px;
+  border-bottom-right-radius: 40px;
+  border-top-right-radius: 40px;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  border: none;
+  padding: 8px 0;
 }
