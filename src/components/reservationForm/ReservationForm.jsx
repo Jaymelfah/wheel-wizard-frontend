@@ -1,65 +1,86 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable jsx-quotes */
 import React, { useState } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import Select from 'react-select';
+import Modal from '../modal/Modal';
 import './reservationForm.css';
 
-const ReservationForm = () => {
-  const [userId, setUserId] = useState('');
-  const [carId, setCarId] = useState('');
-  const [duration, setDuration] = useState('');
-  const [reservationDate, setReservationDate] = useState('');
+const cities = [
+  { value: 'new-york', label: 'New York' },
+  { value: 'los-angeles', label: 'Los Angeles' },
+  { value: 'san-francisco', label: 'San Francisco' },
+];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log({
-      userId,
-      carId,
-      duration,
-      reservationDate,
-    });
+function ReservationForm() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCity, setSelectedCity] = useState('');
+
+  // const handleCitySelection = (city) => {
+  //   setSelectedCity(city);
+  // };
+
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h3 className='note'>Please fill the fields below</h3>
-      <label htmlFor="userId">User ID:</label>
-      <input
-        type="text"
-        id="userId"
-        value={userId}
-        placeholder="User ID"
-        onChange={(e) => setUserId(e.target.value)}
-      />
+    <div className="container">
+      <div className="header">
+        <div className="nav">
+          <div className="nav-icon">
+            <i className="fas fa-bars" />
+          </div>
+          <div className="search-icon">
+            <i className="fas fa-search" />
+          </div>
+        </div>
+        <div className="title">
+          <h4>BOOK A TEST DRIVE WITH WHEEL-WIZARD</h4>
+          <hr className="divider" />
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, blanditiis. lorem10
+          </p>
+        </div>
+        <div className="buttons">
+          {/* <button type="button" onClick={() =>
+            handleCitySelection(selectedCity)}>
+            Select City
+            </button> */}
+          <Select
+            id="select_city"
+            className="select"
+            options={cities}
+            value={selectedCity}
+            onChange={setSelectedCity}
+            styles={{
+              control: (provided) => ({
+                ...provided,
+                borderRadius: '25px', // change the border-radius to your desired value
+                height: '2.7rem',
+                background: '#1e90ff',
+                border: 'none',
+                width: '10rem',
+              }),
+            }}
+          />
 
-      <label htmlFor="carId">Car ID:</label>
-      <input
-        type='text'
-        id='carId'
-        value={carId}
-        placeholder="Car ID"
-        onChange={(e) => setCarId(e.target.value)}
-      />
-
-      <label htmlFor='duration'>Duration:</label>
-      <input
-        type="number"
-        id="duration"
-        value={duration}
-        placeholder="Duration"
-        onChange={(e) => setDuration(e.target.value)}
-      />
-
-      <label htmlFor="reservationDate">Reservation Date:</label>
-      <input
-        type="date"
-        id='reservationDate'
-        value={reservationDate}
-        placeholder="Date"
-        onChange={(e) => setReservationDate(e.target.value)}
-      />
-      <button type='submit'>Book Reservation</button>
-    </form>
+          <button id="book_now" type="button" onClick={handleModalOpen}>Book Now</button>
+        </div>
+      </div>
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <button className="cls-m-btn" type="button" onClick={handleModalClose}>X</button>
+            <br />
+            <Modal />
+          </div>
+        </div>
+      )}
+    </div>
   );
-};
+}
 
 export default ReservationForm;
