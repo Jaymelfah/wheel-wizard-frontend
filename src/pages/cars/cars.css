@@ -1,0 +1,11 @@
+.cars-container{
+    align-items: center;
+    gap: 3rem;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.pagination-btn {
+    height: fit-content;
+    
+}
