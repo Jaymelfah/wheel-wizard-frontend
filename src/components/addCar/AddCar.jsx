@@ -10,6 +10,7 @@ const AddCar = () => {
     name: '',
     description: '',
     price: '',
+    image: '',
     test_drive_fee: '',
     model: '',
     year: '',
@@ -23,7 +24,8 @@ const AddCar = () => {
     const car = {
       name: carData.name,
       description: carData.description,
-      price: carData.description,
+      price: carData.price,
+      image: carData.image,
       test_drive_fee: carData.test_drive_fee,
       model: carData.model,
       year: carData.year,
