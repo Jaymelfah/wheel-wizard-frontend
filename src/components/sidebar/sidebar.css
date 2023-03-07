@@ -38,7 +38,7 @@
     position: relative;
     display: flex !important;
   }
-  
+
   .sidebar-active {
     display: none !important;
   }

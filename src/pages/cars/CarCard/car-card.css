@@ -1,21 +1,21 @@
 .car-card {
-    align-items: center;
-    justify-content: flex-end;
-    height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
 }
 
 .car-image {
-    height: auto;
-    width: 15rem
+  height: auto;
+  width: 15rem;
 }
 
 @media only screen and (max-width: 768px) {
-    .car-card {
-      height: auto;
-    }
-
-    .car-image {
-        height: auto;
-        width: 10rem
-    }
+  .car-card {
+    height: auto;
   }
+
+  .car-image {
+    height: auto;
+    width: 10rem;
+  }
+}

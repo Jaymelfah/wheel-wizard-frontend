@@ -6,7 +6,6 @@
 }
 
 .pagination-btn {
-  height: fit-content;
   background-color: #98c10f;
   width: 76px;
   border-bottom-right-radius: 40px;
@@ -18,17 +17,17 @@
   padding: 8px 0;
 }
 
-.right{
-    border-bottom-left-radius: 40px;
-    border-top-left-radius: 40px;
-    border-bottom-right-radius: 0px;
-    border-top-right-radius: 0px;
-    justify-content: flex-start;
+.right {
+  border-bottom-left-radius: 40px;
+  border-top-left-radius: 40px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  justify-content: flex-start;
 }
 
 @media only screen and (max-width: 768px) {
   .cars-container {
-    gap: 0rem;
+    gap: 0;
     justify-content: flex-start;
   }
 }
