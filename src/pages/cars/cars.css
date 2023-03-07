@@ -1,11 +1,27 @@
-.cars-container{
-    align-items: center;
-    gap: 3rem;
-    justify-content: space-between;
-    width: 100%;
+.cars-container {
+  align-items: center;
+  gap: 3rem;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .pagination-btn {
-    height: fit-content;
-    
+  height: fit-content;
+  background-color: #98c10f;
+  width: 76px;
+  border-bottom-right-radius: 40px;
+  border-top-right-radius: 40px;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  border: none;
+  padding: 8px 0;
+}
+
+.right{
+    border-bottom-left-radius: 40px;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    justify-content: flex-start;
 }

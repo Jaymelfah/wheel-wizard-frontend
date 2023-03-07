@@ -1,8 +1,10 @@
 .car-card {
     align-items: center;
+    justify-content: flex-end;
+    height: 100%;
 }
 
 .car-image {
-    height: 15rem;
-    width: 20rem
+    height: auto;
+    width: 15rem
 }

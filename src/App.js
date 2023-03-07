@@ -6,7 +6,7 @@ import Cars from './pages/cars/Cars';
 function App() {
   return (
     <div className="app">
-      <div className="d-flex flex-row">
+      <div className="main-container d-flex flex-row">
         <SideBar />
         <Cars />
       </div>

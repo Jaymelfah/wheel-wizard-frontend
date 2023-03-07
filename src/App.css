@@ -2,7 +2,7 @@
   margin: 0;
   display: block;
   height: auto;
-  background-color: #e3e3e3;
+  background-color: #edecec;
 }
 
 ul {
@@ -11,4 +11,8 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+.main-container{
+  height: 100vh;
 }
