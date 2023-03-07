@@ -10,7 +10,7 @@ const AddCar = () => {
     name: '',
     description: '',
     price: '',
-    image: '',
+    image: null,
     test_drive_fee: '',
     model: '',
     year: '',
@@ -21,22 +21,30 @@ const AddCar = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const car = {
-      name: carData.name,
-      description: carData.description,
-      price: carData.price,
-      image: carData.image,
-      test_drive_fee: carData.test_drive_fee,
-      model: carData.model,
-      year: carData.year,
-    };
-    dispatch(createCar(car));
+    const data = new FormData();
+    data.append('car[name]', carData.name);
+    data.append('car[description]', carData.description);
+    data.append('car[price]', carData.price);
+    data.append('car[image]', carData.image);
+    data.append('car[test_drive_fee]', carData.test_drive_fee);
+    data.append('car[model]', carData.model);
+    data.append('car[year]', carData.year);
+
+    dispatch(createCar(data));
     gohome();
   };
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+
+    setCarData((prevCarData) => ({
+      ...prevCarData,
+      image: file,
+    }));
+  };
+
   const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setCarData({ ...carData, [name]: value });
+    setCarData({ ...carData, [event.target.name]: event.target.value });
   };
 
   return (
@@ -105,7 +113,14 @@ const AddCar = () => {
         </div>
         <div className="input-group mb-3">
           <span className="input-group-text" id="basic-addon3">Add an Image</span>
-          <input type="file" name="image" className="form-control" id="basic-url" aria-describedby="basic-addon3" onChange={handleInputChange} />
+          <input
+            type="file"
+            name="image"
+            className="form-control"
+            id="basic-url"
+            aria-describedby="basic-addon3"
+            onChange={handleImageChange}
+          />
         </div>
         <div className="input-group mb-3">
           <span className="input-group-text" id="basic-addon3">Year</span>
@@ -129,5 +144,4 @@ const AddCar = () => {
     </div>
   );
 };
-
 export default AddCar;
