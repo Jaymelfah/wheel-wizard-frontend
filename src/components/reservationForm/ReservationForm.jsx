@@ -44,7 +44,7 @@ function ReservationForm() {
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, blanditiis. lorem10
           </p>
         </div>
-        <div className="buttons">
+        <div className="buttons" style={{ display: 'flex', alignItems: 'center', marginTop: '2rem' }}>
           {/* <button type="button" onClick={() =>
             handleCitySelection(selectedCity)}>
             Select City
@@ -58,18 +58,26 @@ function ReservationForm() {
             styles={{
               control: (provided) => ({
                 ...provided,
-                borderRadius: '25px', // change the border-radius to your desired value
+                borderRadius: '25px',
                 height: '2.7rem',
                 background: '#a2d31a',
                 border: '1px solid white',
-                width: '10rem',
+                width: '10.2rem',
                 color: 'white',
               }),
             }}
           />
 
-          <button id="book_now" type="button" onClick={handleModalOpen}>Book Now</button>
+          <button
+            id="book_now"
+            type="button"
+            style={{ marginLeft: '1rem' }}
+            onClick={handleModalOpen}
+          >
+            Book Now
+          </button>
         </div>
+
       </div>
       {isModalOpen && (
         <div className="modal">
