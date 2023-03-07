@@ -103,8 +103,12 @@ const AddCar = () => {
             required
           />
         </div>
-        <div className="year form-control">
-          <sapn>Year</sapn>
+        <div className="input-group mb-3">
+          <span className="input-group-text" id="basic-addon3">Add an Image</span>
+          <input type="file" name="image" className="form-control" id="basic-url" aria-describedby="basic-addon3" onChange={handleInputChange} />
+        </div>
+        <div className="input-group mb-3">
+          <span className="input-group-text" id="basic-addon3">Year</span>
           <input
             type="date"
             value={carData.year}
