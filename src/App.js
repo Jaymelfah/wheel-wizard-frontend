@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
 import SideBar from './components/sidebar/SideBar';
+import AddCar from './components/addCar/AddCar';
 
 function App() {
   return (
@@ -8,6 +10,9 @@ function App() {
       <div className="d-flex flex-row">
         <SideBar />
       </div>
+      <Routes>
+        <Route path="/add-car" element={<AddCar />} />
+      </Routes>
     </div>
   );
 }
