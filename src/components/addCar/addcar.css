@@ -19,27 +19,12 @@ form {
   width: 80%;
 }
 
-form input {
-  font-size: 16px;
-  font-weight: 400;
-  border: none;
-  border-bottom: 2px solid #757575;
-  outline: none;
-  transition: all 0.3s ease;
-  padding: 10px;
-}
-
-form input:focus {
-  border-bottom: 2px solid #98c10f;
-  box-shadow: 0 0 5px 0 #98c10f inset;
-}
-
 form button {
-  background-color: #98c10f;
+  background-color: #98c10f !important;
   color: #fff;
   font-size: 16px;
   font-weight: 600;
-  border: none;
+  border: none !important;
   border-radius: 20px;
   padding: 10px 20px;
   cursor: pointer;
@@ -51,4 +36,9 @@ form button {
 form label {
   background-color: #fff;
   width: 100%;
+}
+
+.year {
+  display: flex;
+  align-items: center;
 }

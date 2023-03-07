@@ -53,7 +53,7 @@ const AddCar = () => {
             value={carData.name}
             onChange={handleInputChange}
             autoComplete="off"
-            className="w-full"
+            className="form-control w-full"
             required
           />
         </div>
@@ -63,7 +63,7 @@ const AddCar = () => {
             value={carData.description}
             name="description"
             onChange={handleInputChange}
-            className="w-full"
+            className="w-full form-control"
             placeholder="Description"
             required
           />
@@ -75,7 +75,7 @@ const AddCar = () => {
             placeholder="Test_drive_fee"
             name="test_drive_fee"
             onChange={handleInputChange}
-            className="w-full"
+            className="form-control"
             required
           />
         </div>
@@ -86,7 +86,7 @@ const AddCar = () => {
             placeholder="Model"
             name="model"
             onChange={handleInputChange}
-            className="w-full"
+            className="form-control"
             required
           />
         </div>
@@ -97,24 +97,25 @@ const AddCar = () => {
             placeholder="Price"
             name="price"
             onChange={handleInputChange}
-            className="w-full"
+            className="form-control"
             required
           />
         </div>
-        <div>
-          <label htmlFor="year">Year</label>
+        <div className="year form-control">
+          <sapn>Year</sapn>
           <input
             type="date"
             value={carData.year}
             name="year"
             onChange={handleInputChange}
-            className="w-full"
+            className="form-control"
             required
           />
 
         </div>
         <button
           type="submit"
+          className="btn btn-primary mb-3"
         >
           Add
         </button>
