@@ -25,3 +25,10 @@
     border-top-right-radius: 0px;
     justify-content: flex-start;
 }
+
+@media only screen and (max-width: 768px) {
+  .cars-container {
+    gap: 0rem;
+    justify-content: flex-start;
+  }
+}

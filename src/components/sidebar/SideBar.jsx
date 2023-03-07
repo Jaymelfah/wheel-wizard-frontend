@@ -27,11 +27,7 @@ const SideBar = () => {
         className="toggle-sidebar-btn"
         onClick={toggleSidebar}
       >
-        {sidebar ? (
-          <RxIcons.RxTriangleLeft size="2.5em" />
-        ) : (
-          <RxIcons.RxTriangleRight size="2.5em" />
-        )}
+        <RxIcons.RxHamburgerMenu size="2.5em" />
       </button>
     </div>
   );
