@@ -20,7 +20,7 @@ const Modal = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h3>Feel the fieds below</h3>
+      <h3>Fill the fieds below</h3>
       <label htmlFor="userId">User ID:</label>
       <input
         type="text"

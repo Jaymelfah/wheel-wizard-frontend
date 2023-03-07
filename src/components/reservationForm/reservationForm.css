@@ -88,9 +88,9 @@ button:hover {
   background-color: #0c7cd5;
 }
 
-.css-qbdosj-Input {
+/* .css-qbdosj-Input {
   color: white;
-}
+} */
 
 .divider {
   width: 100%;
@@ -145,6 +145,14 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+
+  form {
+    width: 100%;
   }
 }
 
