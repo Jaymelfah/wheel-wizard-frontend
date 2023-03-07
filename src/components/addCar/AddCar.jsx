@@ -1,6 +1,9 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { createCar } from '../../redux/car/car';
+import './addcar.css';
 
 const AddCar = () => {
   const [carData, setCarData] = useState({
@@ -11,7 +14,8 @@ const AddCar = () => {
     model: '',
     year: '',
   });
-
+  const navigate = useNavigate();
+  const gohome = () => navigate('/');
   const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
@@ -25,6 +29,7 @@ const AddCar = () => {
       year: carData.year,
     };
     dispatch(createCar(car));
+    gohome();
   };
 
   const handleInputChange = (event) => {
@@ -33,12 +38,12 @@ const AddCar = () => {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <form
         onSubmit={handleSubmit}
       >
-        <h2 className="w-full text-center">
-          Add a New Car
+        <h2 className="title">
+          Add a new car
         </h2>
         <div className="w-full">
           <input
@@ -59,7 +64,7 @@ const AddCar = () => {
             name="description"
             onChange={handleInputChange}
             className="w-full"
-            placeholder="description"
+            placeholder="Description"
             required
           />
         </div>
@@ -67,7 +72,7 @@ const AddCar = () => {
           <input
             type="number"
             value={carData.test_drive_fee}
-            placeholder="test_drive_fee"
+            placeholder="Test_drive_fee"
             name="test_drive_fee"
             onChange={handleInputChange}
             className="w-full"
@@ -97,6 +102,7 @@ const AddCar = () => {
           />
         </div>
         <div>
+          <label htmlFor="year">Year</label>
           <input
             type="date"
             value={carData.year}
@@ -105,6 +111,7 @@ const AddCar = () => {
             className="w-full"
             required
           />
+
         </div>
         <button
           type="submit"
