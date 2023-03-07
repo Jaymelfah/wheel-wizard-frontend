@@ -60,9 +60,10 @@ function ReservationForm() {
                 ...provided,
                 borderRadius: '25px', // change the border-radius to your desired value
                 height: '2.7rem',
-                background: '#1e90ff',
-                border: 'none',
+                background: '#a2d31a',
+                border: '1px solid white',
                 width: '10rem',
+                color: 'white',
               }),
             }}
           />
