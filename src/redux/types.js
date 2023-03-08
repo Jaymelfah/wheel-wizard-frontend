@@ -1,2 +1,2 @@
-const GET_RESERVATIONS = 'GET_RESERVATIONS';
-export default GET_RESERVATIONS;
+export const GET_RESERVATIONS = 'GET_RESERVATIONS';
+export const GET_CARS = 'GET_CARS';

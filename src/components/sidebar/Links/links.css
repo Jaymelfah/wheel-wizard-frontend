@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700&display=swap');
+
+.sidebar-items {
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-family: 'Tajawal', sans-serif;
+  color: #4f4f4f;
+  width: max-content;
+}
+
+.sidebar-link-box {
+  width: 100%;
+  padding: 0.75rem 0 0.75rem 0.25rem;
+}
+
+.sidebar-link-box:hover,
+.sidebar-link-box:hover * {
+  background-color: #98c10f;
+  color: white !important;
+}
+
+.link-name {
+  color: #4f4f4f;
+}

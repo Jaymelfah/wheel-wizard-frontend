@@ -1,6 +1,19 @@
 .app {
+  display: grid;
   margin: 0;
-  display: block;
   height: auto;
-  background: #a2d31a;
+  background-color: #edecec;
+  grid-template-columns: 30% 60%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-container {
+  height: 100vh;
 }
