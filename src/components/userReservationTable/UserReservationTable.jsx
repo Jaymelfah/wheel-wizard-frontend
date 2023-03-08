@@ -1,12 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
-
-// export default UserReservationTable;
-
-// ***************************************************************
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Table, Button, Modal } from 'react-bootstrap';
 import './userReservationTable.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchReservations } from '../../redux/reservations/reservation';
 
 const UserReservationTable = ({
   // reservations,
@@ -16,6 +14,13 @@ const UserReservationTable = ({
 }) => {
   const [selectedReservation, setSelectedReservation] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const reservations = useSelector((state) => state.reservations);
+  const dispatch = useDispatch();
+  // console.log(reservations);
+
+  useEffect(() => {
+    dispatch(fetchReservations());
+  }, [dispatch]);
 
   const handleReservationClick = (reservation) => {
     setSelectedReservation(reservation);
@@ -42,61 +47,16 @@ const UserReservationTable = ({
     handleCloseModal();
   };
 
-  const reservations = [
-    {
-      id: 1,
-      date: '2023-03-10',
-      time: '09:00',
-      carModel: 'Tesla Model S',
-      location: '123 Main St',
-    },
-    {
-      id: 2,
-      date: '2023-03-12',
-      time: '13:00',
-      carModel: 'Ford Mushtang',
-      location: '456 Oak St',
-    },
-    {
-      id: 3,
-      date: '2023-03-12',
-      time: '07:00',
-      carModel: 'Chevrolet Camaro',
-      location: '456 Oak St',
-    },
-    {
-      id: 4,
-      date: '2023-03-12',
-      time: '10:00',
-      carModel: 'Nissan Altimate',
-      location: '456 Oak St',
-    },
-    {
-      id: 5,
-      date: '2023-03-12',
-      time: '03:45',
-      carModel: 'Toyota 4Runner',
-      location: '456 Oak St',
-    },
-    {
-      id: 6,
-      date: '2023-04-12',
-      time: '10:00',
-      carModel: 'Dodge challenger',
-      location: 'AQ6 Lst St',
-    },
-  ];
-
   return (
     <>
       <Table striped bordered hover>
         <thead>
           <tr>
             <th>ID</th>
+            <th>City</th>
+            <th>Car_ID</th>
             <th>Date</th>
-            <th>Time</th>
-            <th>Car Model</th>
-            <th>Location</th>
+            <th>Duration</th>
             {/* <th>Action</th> */}
           </tr>
         </thead>
@@ -104,11 +64,10 @@ const UserReservationTable = ({
           {reservations.map((reservation) => (
             <tr key={reservation.id} onClick={() => handleReservationClick(reservation)}>
               <td>{reservation.id}</td>
-              <td>{reservation.date}</td>
-              <td>{reservation.time}</td>
-              <td>{reservation.carModel}</td>
-              <td>{reservation.location}</td>
-              {/* <td></td> */}
+              <td>{reservation.city}</td>
+              <td>{reservation.car_id}</td>
+              <td>{reservation.reservation_date}</td>
+              <td>{reservation.duration}</td>
             </tr>
           ))}
         </tbody>
@@ -127,20 +86,20 @@ const UserReservationTable = ({
                   {selectedReservation && selectedReservation.id}
                 </p>
                 <p>
+                  <strong>City: </strong>
+                  {selectedReservation && selectedReservation.city}
+                </p>
+                <p>
+                  <strong>Car ID: </strong>
+                  {selectedReservation && selectedReservation.car_id}
+                </p>
+                <p>
                   <strong>Date: </strong>
-                  {selectedReservation && selectedReservation.date}
+                  {selectedReservation && selectedReservation.reservation_date}
                 </p>
                 <p>
                   <strong>Time: </strong>
-                  {selectedReservation && selectedReservation.time}
-                </p>
-                <p>
-                  <strong>Car Model: </strong>
-                  {selectedReservation && selectedReservation.carModel}
-                </p>
-                <p>
-                  <strong>Location: </strong>
-                  {selectedReservation && selectedReservation.location}
+                  {selectedReservation && selectedReservation.duration}
                 </p>
               </div>
             </div>
@@ -173,5 +132,3 @@ UserReservationTable.propTypes = {
 };
 
 export default UserReservationTable;
-
-// ################################################################
