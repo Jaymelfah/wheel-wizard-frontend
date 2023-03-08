@@ -3,14 +3,11 @@
 .sidebar-container {
   height: 100vh;
   position: relative;
-  left: -240px;
-  transition: 200ms ease-in-out;
+  display: none !important;
 }
 
 .sidebar-active {
-  height: 100vh;
-  position: relative;
-  left: 0;
+  display: flex !important;
 }
 
 .sidebar-title {
@@ -33,5 +30,16 @@
   display: flex;
   justify-content: flex-end;
   border: none;
-  padding: 8px 0;
+  padding-right: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .sidebar-container {
+    position: relative;
+    display: flex !important;
+  }
+
+  .sidebar-active {
+    display: none !important;
+  }
 }

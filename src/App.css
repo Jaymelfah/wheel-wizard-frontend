@@ -2,7 +2,7 @@
   display: grid;
   margin: 0;
   height: auto;
-  background-color: #e3e3e3;
+  background-color: #edecec;
   grid-template-columns: 30% 60%;
 }
 
@@ -12,4 +12,8 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+.main-container {
+  height: 100vh;
 }
