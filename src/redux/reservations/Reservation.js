@@ -19,7 +19,7 @@ export const fetchReservations = createAsyncThunk('reservations/getData', async 
 export const addReservation = createAsyncThunk('reservations/addData', async (payload) => {
   const response = await fetch(url, {
     method: 'POST',
-    body: JSON.stringify({ car: payload }),
+    body: JSON.stringify({ reservation: payload }),
     headers: {
       'Content-type': 'application/json',
       Authorization: `Bearer ${token}`,

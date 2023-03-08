@@ -10,7 +10,7 @@ const UserReservationTable = ({
   // reservations,
   onCancel,
   onAdd,
-  onPostpone,
+  // onPostpone,
 }) => {
   const [selectedReservation, setSelectedReservation] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -42,10 +42,10 @@ const UserReservationTable = ({
     handleCloseModal();
   };
 
-  const handlePostponeClick = () => {
-    onPostpone(selectedReservation);
-    handleCloseModal();
-  };
+  // const handlePostponeClick = () => {
+  //   onPostpone(selectedReservation);
+  //   handleCloseModal();
+  // };
 
   return (
     <>
@@ -106,7 +106,7 @@ const UserReservationTable = ({
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="warning" onClick={handlePostponeClick}>Postpone </Button>
+          {/* <Button variant="warning" onClick={handlePostponeClick}>Postpone </Button> */}
           <Button variant="success" onClick={handleAddClick}>Add New</Button>
           <Button variant="danger" onClick={handleCancelClick}>Cancel</Button>
           <Button variant="secondary" onClick={handleCloseModal}>Close</Button>
@@ -128,7 +128,7 @@ UserReservationTable.propTypes = {
   // ).isRequired,
   onCancel: PropTypes.func.isRequired,
   onAdd: PropTypes.func.isRequired,
-  onPostpone: PropTypes.func.isRequired,
+  // onPostpone: PropTypes.func.isRequired,
 };
 
 export default UserReservationTable;
