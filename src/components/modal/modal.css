@@ -1,4 +1,4 @@
-form {
+.m-form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -15,15 +15,15 @@ form {
   color: #9b5a5a;
 }
 
-label {
+.m-form label {
   font-weight: bold;
   align-self: start;
   margin-bottom: -0.5rem;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="date"] {
+.m-form input[type="text"],
+.m-form input[type="number"],
+.m-form input[type="date"] {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
@@ -31,7 +31,7 @@ input[type="date"] {
   box-sizing: border-box;
 }
 
-button[type="submit"] {
+.m-form button[type="submit"] {
   background-color: #4caf50;
   color: #fff;
   padding: 8px 16px;
@@ -45,7 +45,7 @@ button[type="submit"]:hover {
 }
 
 @media (max-width: 768px) {
-  form {
+  .m-form {
     width: 90%;
   }
 
