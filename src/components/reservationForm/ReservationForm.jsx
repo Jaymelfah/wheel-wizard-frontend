@@ -51,6 +51,7 @@ function ReservationForm() {
             options={cities}
             value={selectedCity}
             onChange={setSelectedCity}
+            placeholder="Select a City..."
             styles={{
               control: (provided) => ({
                 ...provided,
@@ -59,6 +60,14 @@ function ReservationForm() {
                 background: '#a2d31a',
                 border: '1px solid white',
                 width: '10.2rem',
+                color: 'white',
+              }),
+              placeholder: (provided) => ({
+                ...provided,
+                color: 'white',
+              }),
+              dropdownIndicator: (provided) => ({
+                ...provided,
                 color: 'white',
               }),
             }}
