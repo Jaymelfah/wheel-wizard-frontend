@@ -1,0 +1,42 @@
+.del-container {
+  margin-top: 5%;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+
+.del-list {
+  display: flex;
+  width: 50%;
+  align-items: stretch;
+  flex-direction: column;
+  padding-left: 0;
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.images {
+  width: 100px; /* adjust to your desired size */
+}
+
+.car-image {
+  width: 60px;
+  margin-left: 3rem;
+  height: 60px;
+  object-fit: contain;
+}
+
+.cars {
+  flex: 0.2;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.del {
+  width: 80px; /* adjust to your desired size */
+}
