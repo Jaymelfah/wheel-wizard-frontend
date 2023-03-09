@@ -5,6 +5,7 @@ import SideBar from './components/sidebar/SideBar';
 import Cars from './pages/cars/Cars';
 import AddCar from './components/addCar/AddCar';
 import LoginForm from './pages/login/Login';
+import SignupForm from './pages/signup/Signup';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Cars />} />
         <Route path="/add-car" element={<AddCar />} />
         <Route path="/login" element={<LoginForm />} />
+        <Route path="/signup" element={<SignupForm />} />
       </Routes>
     </div>
   );
