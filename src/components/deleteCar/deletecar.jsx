@@ -37,7 +37,7 @@ const RemoveCar = () => {
           <li key={car.id} className="list-group-item d-flex justify-content-between align-items-start">
             <span className="images">
               {' '}
-              <img src={car.image_url} alt="img" className="car-image d-flex flex-column" />
+              <img src={car.image_url} alt="img" className="del-car-image d-flex flex-column" />
             </span>
             <span className="cars">{car.name}</span>
             <span className="del">
