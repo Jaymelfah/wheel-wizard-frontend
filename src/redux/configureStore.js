@@ -1,12 +1,14 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { carsReducer } from './cars/cars';
-import { createCar } from './car/car';
 // eslint-disable-next-line import/extensions
 import reservationReducer from './reservations/reservation.js';
+import createCarReducer from './car/car';
+import deleteCarReducer from './deletecar/deletecar';
 
 const rootReducer = combineReducers({
   cars: carsReducer,
-  newcar: createCar,
+  newcar: createCarReducer,
+  delete: deleteCarReducer,
   reservations: reservationReducer,
 });
 
