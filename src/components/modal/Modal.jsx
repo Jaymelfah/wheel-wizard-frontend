@@ -43,7 +43,10 @@ const Modal = ({ selectedCity, setIsModalOpen }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className="m-form"
+    >
       <h3>Fill the fieds below</h3>
 
       <label htmlFor="carName">Car Name:</label>
