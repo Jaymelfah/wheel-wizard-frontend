@@ -9,15 +9,12 @@ h2 {
 
 .form-container {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-}
 
 form button {
   background-color: #98c10f !important;

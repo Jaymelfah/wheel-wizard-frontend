@@ -1,4 +1,4 @@
-import GET_CARS from '../types';
+import { GET_CARS } from '../types';
 import getCarsFromDB from '../../APIs/cars';
 
 const initialState = [];

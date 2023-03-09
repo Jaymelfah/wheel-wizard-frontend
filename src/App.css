@@ -1,9 +1,8 @@
 .app {
-  display: grid;
+  display: flex;
   margin: 0;
   height: auto;
   background-color: #edecec;
-  grid-template-columns: 30% 60%;
 }
 
 ul {
