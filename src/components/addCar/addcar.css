@@ -11,7 +11,7 @@ h2 {
   position: relative;
 }
 
-form {
+.a-form {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -19,7 +19,7 @@ form {
   width: 80%;
 }
 
-form button {
+.a-form button {
   background-color: #98c10f !important;
   color: #fff;
   font-size: 16px;
@@ -33,7 +33,7 @@ form button {
   float: right;
 }
 
-form label {
+.a-form label {
   background-color: #fff;
   width: 100%;
 }
