@@ -10,7 +10,7 @@ const initialState = {
   token: null,
   isAuthenticated: false,
   error: null,
-  success: false,
+  success: null,
 };
 
 export const login = (reqBody) => async (dispatch) => {
@@ -40,7 +40,7 @@ export const authReducer = (state = initialState, action) => {
     case SIGNUP_SUCCESS:
       return { ...state, success: true, message: action.payload };
     case SIGNUP_FAIL:
-      return { ...state, error: action.payload };
+      return { ...state, success: false, error: action.payload };
     default:
       return state;
   }

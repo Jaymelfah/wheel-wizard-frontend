@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { signup } from '../../redux/auth/auth';
 
 const SignupForm = () => {
@@ -9,7 +10,9 @@ const SignupForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const success = useSelector((state) => state.auth.success);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,6 +24,12 @@ const SignupForm = () => {
     };
     dispatch(signup(reqBody));
   };
+
+  useEffect(() => {
+    if (success) {
+      navigate('/login');
+    }
+  }, [success]);
 
   return (
     <Form className="login-form" onSubmit={handleSubmit}>
