@@ -7,7 +7,11 @@ import './reservationForm.css';
 const cities = [
   { value: 'new-york', label: 'New York' },
   { value: 'los-angeles', label: 'Los Angeles' },
-  { value: 'san-francisco', label: 'San Francisco' },
+  { value: 'san-francisco', label: 'San Francisc' },
+  { value: 'bradenton-beach', label: 'Bradenton Beach' },
+  { value: 'charlottetown', label: 'Charlottetown' },
+  { value: 'bankog', label: 'Bankog' },
+  { value: 'Beijing', label: 'Beijing' },
 ];
 
 function ReservationForm() {
@@ -84,7 +88,7 @@ function ReservationForm() {
           <div className="modal-content">
             <button className="cls-m-btn" type="button" onClick={handleModalClose}>X</button>
             <br />
-            <Modal />
+            <Modal selectedCity={selectedCity.value} setIsModalOpen={setIsModalOpen} />
           </div>
         </div>
       )}

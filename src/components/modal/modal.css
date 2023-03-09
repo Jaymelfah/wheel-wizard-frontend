@@ -32,7 +32,7 @@ input[type="date"] {
 }
 
 button[type="submit"] {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: #fff;
   padding: 8px 16px;
   border: none;
@@ -48,7 +48,7 @@ button[type="submit"]:hover {
   form {
     width: 90%;
   }
-  
+
   .modal {
     width: 50%;
   }

@@ -50,7 +50,7 @@ export const ReservationSlice = createSlice({
         state.reservations.push(action.payload);
       })
       .addCase(deleteReservation.fulfilled, (state, action) => {
-        state.filter((reservation) => reservation.id !== action.payload.id);
+        state.reservations.filter((reservation) => reservation.id !== action.payload.id);
       });
   },
 });
