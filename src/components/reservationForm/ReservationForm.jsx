@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import Select from 'react-select';
 import Modal from '../modal/Modal';
 import './reservationForm.css';
@@ -17,10 +16,6 @@ const cities = [
 function ReservationForm() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCity, setSelectedCity] = useState('');
-
-  // const handleCitySelection = (city) => {
-  //   setSelectedCity(city);
-  // };
 
   const handleModalOpen = () => {
     setIsModalOpen(true);
@@ -49,10 +44,6 @@ function ReservationForm() {
           </p>
         </div>
         <div className="buttons" style={{ display: 'flex', alignItems: 'center', marginTop: '2rem' }}>
-          {/* <button type="button" onClick={() =>
-            handleCitySelection(selectedCity)}>
-            Select City
-            </button> */}
           <Select
             id="select_city"
             className="select"
