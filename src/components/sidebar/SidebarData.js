@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import * as GiIcons from 'react-icons/gi';
 import * as IoIcons from 'react-icons/io';
