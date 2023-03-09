@@ -48,8 +48,9 @@ const AddCar = () => {
   };
 
   return (
-    <div className="form-container">
+    <div className="form-container ">
       <form
+        className="a-form"
         onSubmit={handleSubmit}
       >
         <h2 className="title">
