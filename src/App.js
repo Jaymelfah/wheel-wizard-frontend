@@ -15,7 +15,7 @@ function App() {
         <SideBar />
       </div>
       <Routes>
-       <Route path="/" element={<Cars />} />
+        <Route path="/" element={<Cars />} />
         <Route path="/add-car" element={<AddCar />} />
         <Route path="/delete-car" element={<RemoveCar />} />
         <Route path="/reserve" element={<ReservationForm />} />

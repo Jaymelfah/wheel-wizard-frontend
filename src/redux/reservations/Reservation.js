@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const url = 'http://localhost:3002/api/v1/reservations';
+const url = 'http://localhost:3000/api/v1/reservations';
 const initialState = [];
-const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOjF9.DNCB8vy2lKn7B4CEM-VF1AAPP1ZSXg41S6HPNNbyUjI';
+const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOjF9.eLvmI-jvl7iBj2Kix4Kor20Nwur4F53KuB1NayRYJaQ';
 
 export const fetchReservations = createAsyncThunk('reservations/getData', async () => {
   const response = await fetch(url, {

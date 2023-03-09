@@ -1,6 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React, { useEffect, useState } from 'react';
-// import PropTypes from 'prop-types';
 import { Table, Button } from 'react-bootstrap';
 import './userReservationTable.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +10,6 @@ const UserReservationTable = () => {
   const carsData = useSelector((state) => state.cars);
   const reservations = useSelector((state) => state.reservations);
   const dispatch = useDispatch();
-  // console.log(reservations);
 
   const cars = carsData.map((car) => ({
     id: car.id,
@@ -36,16 +33,11 @@ const UserReservationTable = () => {
     setSelectedReservation(null);
   };
 
-  const handleCancelClick = async (id) => {
-    await dispatch(deleteReservation(id));
+  const handleCancelClick = (id) => {
+    dispatch(deleteReservation(id));
     handleCloseModal();
     dispatch(fetchReservations());
   };
-
-  // const handlePostponeClick = () => {
-  //   onPostpone(selectedReservation);
-  //   handleCloseModal();
-  // };
 
   return (
     <>
@@ -58,7 +50,6 @@ const UserReservationTable = () => {
             <th>Date</th>
             <th>Duration</th>
             <th>Delete</th>
-            {/* <th>Action</th> */}
           </tr>
         </thead>
         <tbody>
@@ -78,7 +69,6 @@ const UserReservationTable = () => {
           })}
         </tbody>
       </Table>
-
     </>
   );
 };
