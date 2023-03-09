@@ -7,6 +7,7 @@ import SideBar from './components/sidebar/SideBar';
 import Cars from './pages/cars/Cars';
 import AddCar from './components/addCar/AddCar';
 import RemoveCar from './components/deleteCar/deletecar';
+import DetailsPage from './components/carDetails/cardetails';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/delete-car" element={<RemoveCar />} />
         <Route path="/reserve" element={<ReservationForm />} />
         <Route path="/myreservations" element={<UserReservationTable />} />
+        <Route path="/details/:id" element={<DetailsPage />} />
       </Routes>
     </div>
   );
