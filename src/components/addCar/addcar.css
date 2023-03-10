@@ -3,16 +3,45 @@ h2 {
   margin-bottom: 3%;
 }
 
+.title {
+  color: #98c10f;
+}
+
 .w-full {
   width: 100%;
 }
 
 .form-container {
-  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  width: 80%;
+  margin-left: 15%;
+  height: 100vh;
+  background-image: url(https://cdn.pixabay.com/photo/2020/02/05/03/42/lamborghini-4820024_960_720.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form-container::before {
+  content: '';
+  position: absolute; /* make the pseudo-element positioned relative to the container */
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background-color: rgba(150, 191, 2, 0.929); /* set the background color with transparency */
+}
+
+.add-car-form {
+  width: 50%;
+  background-color: #fff;
+  margin-top: 10%;
+  height: max-content;
+  box-shadow: -1px 4px 5px 0 rgba(42, 43, 42, 0.64);
+  -webkit-box-shadow: -1px 4px 5px 0 rgba(25, 26, 25, 0.64);
+  -moz-box-shadow: -1px 4px 5px 0 rgba(38, 38, 36, 0.64);
+  border-radius: 8px;
+  z-index: 10;
 }
 
 form button {

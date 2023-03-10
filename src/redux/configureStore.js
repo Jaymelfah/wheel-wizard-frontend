@@ -1,6 +1,9 @@
+/* eslint-disable import/extensions */
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { carsReducer } from './cars/cars';
-import { createCar } from './car/car';
+import reservationReducer from './reservations/reservation.js';
+import createCarReducer from './car/car';
+import deleteCarReducer from './deletecar/deletecar';
 import { authReducer } from './auth/auth';
 
 const token = localStorage.getItem('token');
@@ -13,8 +16,10 @@ const initialState = {
 
 const rootReducer = combineReducers({
   cars: carsReducer,
-  newcar: createCar,
+  newcar: createCarReducer,
   auth: authReducer,
+  delete: deleteCarReducer,
+  reservations: reservationReducer,
 });
 
 export default configureStore({

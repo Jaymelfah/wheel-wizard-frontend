@@ -32,6 +32,9 @@
   border: none;
   padding-right: 1rem;
   z-index: 1111111;
+  box-shadow: -1px 4px 5px 0 rgba(42, 43, 42, 0.769);
+  -webkit-box-shadow: -1px 4px 5px 0 rgba(25, 26, 25, 0.64);
+  -moz-box-shadow: -1px 4px 5px 0 rgba(38, 38, 36, 0.703);
 }
 
 @media only screen and (max-width: 768px) {
