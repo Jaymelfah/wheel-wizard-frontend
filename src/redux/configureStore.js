@@ -1,6 +1,7 @@
+/* eslint-disable import/extensions */
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { carsReducer } from './cars/cars';
-import reservationReducer from './reservations/reservation';
+import reservationReducer from './reservations/reservation.js';
 import createCarReducer from './car/car';
 import deleteCarReducer from './deletecar/deletecar';
 
