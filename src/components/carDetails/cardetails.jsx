@@ -4,10 +4,8 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './details.css';
 
-const DetailsPage = () => {
-  //test: grabing id from url  
+const DetailsPage = () => { 
   const { id } = useParams(); 
-  console.log(id);
   const [car, setCar] = useState(null);
 
 
