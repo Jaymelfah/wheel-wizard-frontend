@@ -45,7 +45,6 @@ const Modal = ({ selectedCity, setIsModalOpen }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="m-form"
     >
       <h3>Fill the fieds below</h3>
 

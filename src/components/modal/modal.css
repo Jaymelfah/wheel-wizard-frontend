@@ -1,4 +1,4 @@
-.m-form {
+form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -15,15 +15,15 @@
   color: #9b5a5a;
 }
 
-.m-form label {
+label {
   font-weight: bold;
   align-self: start;
   margin-bottom: -0.5rem;
 }
 
-.m-form input[type="text"],
-.m-form input[type="number"],
-.m-form input[type="date"] {
+ input[type="text"],
+ input[type="number"],
+ input[type="date"] {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
@@ -31,7 +31,7 @@
   box-sizing: border-box;
 }
 
-.m-form button[type="submit"] {
+ button[type="submit"] {
   background-color: #4caf50;
   color: #fff;
   padding: 8px 16px;
@@ -45,7 +45,7 @@ button[type="submit"]:hover {
 }
 
 @media (max-width: 768px) {
-  .m-form {
+  form {
     width: 90%;
   }
 
