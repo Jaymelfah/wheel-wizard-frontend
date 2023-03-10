@@ -33,7 +33,7 @@ const SignupForm = () => {
 
   return (
     <Form className="login-form" onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label>Name</Form.Label>
         <Form.Control
           type="name"
@@ -61,7 +61,7 @@ const SignupForm = () => {
           onChange={(event) => setPassword(event.target.value)}
         />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
+      <Form.Group className="mb-3" controlId="formConfirmPassword">
         <Form.Label>Confirm your Password</Form.Label>
         <Form.Control
           type="password"
@@ -73,9 +73,9 @@ const SignupForm = () => {
       <Button variant="primary" type="submit">
         Signup
       </Button>
-      {/* <Button variant="white" type="button" className="btn bg-outline-success">
-        Sign up
-      </Button> */}
+      <Button variant="white" type="button" className="btn plain-btn" onClick={() => navigate('/login')}>
+        login
+      </Button>
     </Form>
   );
 };

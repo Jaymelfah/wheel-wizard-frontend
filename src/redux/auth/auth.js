@@ -3,6 +3,7 @@ import {
   LOGIN_FAIL,
   SIGNUP_SUCCESS,
   SIGNUP_FAIL,
+  LOGOUT,
 } from '../types';
 import { getToken, createAccount } from '../../APIs/user';
 
@@ -16,10 +17,16 @@ const initialState = {
 export const login = (reqBody) => async (dispatch) => {
   try {
     const token = await getToken(reqBody);
+    localStorage.setItem('token', token);
     dispatch({ type: LOGIN_SUCCESS, payload: token });
   } catch (error) {
     dispatch({ type: LOGIN_FAIL, payload: error.message });
   }
+};
+
+export const logout = () => async (dispatch) => {
+  localStorage.removeItem('token');
+  dispatch({ type: LOGOUT });
 };
 
 export const signup = (reqBody) => async (dispatch) => {
@@ -41,6 +48,8 @@ export const authReducer = (state = initialState, action) => {
       return { ...state, success: true, message: action.payload };
     case SIGNUP_FAIL:
       return { ...state, success: false, error: action.payload };
+    case LOGOUT:
+      return { success: true, isAuthenticated: false, token: null };
     default:
       return state;
   }

@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './login.css';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { login } from '../../redux/auth/auth';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -21,12 +20,6 @@ const LoginForm = () => {
     };
     dispatch(login(reqBody));
   };
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      navigate('/');
-    }
-  }, [isAuthenticated]);
 
   return (
     <Form className="login-form" onSubmit={handleSubmit}>
@@ -52,9 +45,9 @@ const LoginForm = () => {
       <Button variant="primary" type="submit">
         Login
       </Button>
-      {/* <Button variant="white" type="button" className="btn bg-outline-success">
+      <Button variant="white" type="button" className="btn plain-btn" onClick={() => navigate('/signup')}>
         Sign up
-      </Button> */}
+      </Button>
     </Form>
   );
 };

@@ -41,6 +41,14 @@ export const navLinks = [
     path: '/delete-car',
     cName: 'sidebar-link',
   },
+  {
+    id: 6,
+    title: 'Logout',
+    icon: <RiIcons.RiDeleteBack2Line />,
+    path: '/',
+    cName: 'sidebar-link',
+    action: 'logout',
+  },
 ];
 
 export const socialLinks = [
