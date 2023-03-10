@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './details.css';
 
 const DetailsPage = () => {
@@ -8,6 +9,12 @@ const DetailsPage = () => {
   const { id } = useParams(); 
   console.log(id);
   const [car, setCar] = useState(null);
+
+
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/reserve');
+  };
 
   useEffect(() => {
     fetch(`http://localhost:3000/api/v1/cars/${id}`)
@@ -27,7 +34,7 @@ const DetailsPage = () => {
           <p>TEST DRIVE FEE: {car.test_drive_fee}$</p>
           <p>MODEL: {car.model}</p>
           <p>YEAR MANUFACTURED: {car.year}</p>
-          <button>Reserve</button>
+          <button onClick={handleClick}>Reserve</button>
           </div>
         </section>
       ) : (
