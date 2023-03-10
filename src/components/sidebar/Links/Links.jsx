@@ -1,6 +1,5 @@
-/*eslint-disable*/
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
 import { navLinks } from '../SidebarData';
@@ -8,13 +7,11 @@ import './links.css';
 import { logout } from '../../../redux/auth/auth';
 
 function Links() {
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
 
   const handleLogout = () => {
     dispatch(logout());
   };
-
 
   return (
     <IconContext.Provider value={{ color: '#98C10F', size: '1.1em' }}>
