@@ -1,17 +1,19 @@
 /* eslint-disable */
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import Modal from './detailsmodal';
 import './details.css';
 
 const DetailsPage = () => { 
   const { id } = useParams(); 
   const [car, setCar] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
+  };
 
-
-  const navigate = useNavigate();
-  const handleClick = () => {
-    navigate('/reserve');
+  const handleModalClose = () => {
+    setIsModalOpen(false);
   };
 
   useEffect(() => {
@@ -32,11 +34,20 @@ const DetailsPage = () => {
           <p>TEST DRIVE FEE: {car.test_drive_fee}$</p>
           <p>MODEL: {car.model}</p>
           <p>YEAR MANUFACTURED: {car.year}</p>
-          <button onClick={handleClick}>Reserve</button>
+          <button onClick={handleModalOpen}>Reserve</button>
           </div>
         </section>
       ) : (
         <p>Loading...</p>
+      )}
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <button className="cls-m-btn" type="button" onClick={handleModalClose}>X</button>
+            <br />
+            <Modal selectedCar={car} setIsModalOpen={setIsModalOpen} />
+          </div>
+        </div>
       )}
     </div>
   );
