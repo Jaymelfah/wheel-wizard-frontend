@@ -18,10 +18,6 @@ function ReservationForm() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCity, setSelectedCity] = useState('');
 
-  // const handleCitySelection = (city) => {
-  //   setSelectedCity(city);
-  // };
-
   const handleModalOpen = () => {
     setIsModalOpen(true);
   };
@@ -44,21 +40,18 @@ function ReservationForm() {
         <div className="title">
           <h4>BOOK A TEST DRIVE WITH WHEEL-WIZARD</h4>
           <hr className="divider" />
-          <p>
+          <p style={{ color: '#fff' }}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, blanditiis. lorem10
           </p>
         </div>
         <div className="buttons" style={{ display: 'flex', alignItems: 'center', marginTop: '2rem' }}>
-          {/* <button type="button" onClick={() =>
-            handleCitySelection(selectedCity)}>
-            Select City
-            </button> */}
           <Select
             id="select_city"
             className="select"
             options={cities}
             value={selectedCity}
             onChange={setSelectedCity}
+            placeholder="Select a City..."
             styles={{
               control: (provided) => ({
                 ...provided,
@@ -67,6 +60,14 @@ function ReservationForm() {
                 background: '#a2d31a',
                 border: '1px solid white',
                 width: '10.2rem',
+                color: 'white',
+              }),
+              placeholder: (provided) => ({
+                ...provided,
+                color: 'white',
+              }),
+              dropdownIndicator: (provided) => ({
+                ...provided,
                 color: 'white',
               }),
             }}

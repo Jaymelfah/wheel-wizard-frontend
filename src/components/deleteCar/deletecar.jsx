@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCars, deleteCar } from '../../redux/deletecar/deletecar';
+import trashcan from '../../assets/trash.gif';
+import './deletecar.css';
 
 const RemoveCar = () => {
   const dispatch = useDispatch();
@@ -27,15 +29,22 @@ const RemoveCar = () => {
   }
 
   return (
-    <div>
-      <h2>
-        Delete a car
-      </h2>
-      <ol className="list-group list-group-numbered">
+    <div className="d-flex w-full del-container">
+      <ol className="list-group list-group-numbered del-list">
+        <div className="d-flex w-full del-header">
+          <h2>
+            Delete A Car
+          </h2>
+          <img src={trashcan} alt="trash" className="trash" />
+        </div>
         {cars.map((car) => (
           <li key={car.id} className="list-group-item d-flex justify-content-between align-items-start">
-            {car.name}
-            <span>
+            <span className="images">
+              {' '}
+              <img src={car.image_url} alt="img" className="del-car-image d-flex flex-column" />
+            </span>
+            <span className="cars">{car.name}</span>
+            <span className="del">
               <button
                 type="button"
                 onClick={() => deletecar(car.id)}

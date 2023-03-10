@@ -50,10 +50,11 @@ const AddCar = () => {
   return (
     <div className="form-container">
       <form
+        className="add-car-form"
         onSubmit={handleSubmit}
       >
         <h2 className="title">
-          Add a new car
+          Add A New Car
         </h2>
         <div className="w-full">
           <input
@@ -67,7 +68,7 @@ const AddCar = () => {
             required
           />
         </div>
-        <div>
+        <div className="w-full">
           <input
             type="text"
             value={carData.description}
@@ -78,18 +79,18 @@ const AddCar = () => {
             required
           />
         </div>
-        <div>
+        <div className="w-full">
           <input
             type="number"
             value={carData.test_drive_fee}
-            placeholder="Test_drive_fee"
+            placeholder="Test Drive Fee"
             name="test_drive_fee"
             onChange={handleInputChange}
             className="form-control"
             required
           />
         </div>
-        <div>
+        <div className="w-full">
           <input
             type="text"
             value={carData.model}
@@ -100,7 +101,7 @@ const AddCar = () => {
             required
           />
         </div>
-        <div>
+        <div className="w-full">
           <input
             type="number"
             value={carData.price}
