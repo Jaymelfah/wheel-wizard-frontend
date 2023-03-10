@@ -2,7 +2,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const Url = 'http://localhost:3000/api/v1/cars';
+const Url = 'http://localhost:3002/api/v1/cars';
 
 const initialState = {
   status: null,
