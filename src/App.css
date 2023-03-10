@@ -1,5 +1,5 @@
 .app {
-  display: flex;
+  display: grid;
   margin: 0;
   height: auto;
   background-color: #edecec;
