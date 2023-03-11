@@ -9,9 +9,7 @@ import ReservationForm from '../components/reservationForm/ReservationForm';
 
 const AuthenticatedRoute = () => (
   <>
-    <div className="main-container d-flex flex-row">
-      <SideBar />
-    </div>
+    <SideBar />
     <Routes>
       <Route path="/login" element={<Navigate to="/" />} />
       <Route path="/" element={<Cars />} />

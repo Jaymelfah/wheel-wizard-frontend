@@ -1,11 +1,5 @@
 .app {
-  display: grid;
-  margin: 0;
-  height: auto;
-  background-color: #edecec;
-  grid-template-columns: 100%;
-  padding: 0;
-  position: relative;
+  display: flex;
 }
 
 ul {
@@ -17,8 +11,5 @@ a {
 }
 
 .main-container {
-  height: 100vh;
-  position: absolute;
-  left: 0;
-  z-index: 9999;
+ 
 }
