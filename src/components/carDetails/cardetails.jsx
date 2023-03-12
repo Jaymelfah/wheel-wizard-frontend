@@ -23,7 +23,7 @@ const DetailsPage = () => {
   }, [id]);
 
   return (
-    <div>
+    <div className='main-holder'>
       {car ? (
         <section className='details-holder'>
           <img src={car.image_url} className='d-car-image' />

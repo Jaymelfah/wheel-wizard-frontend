@@ -1,16 +1,73 @@
 .details-holder {
-    display: flex;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    flex-wrap: wrap;
+    padding: 50px;
+}
+
+.details-holder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px;
 }
 
 .d-car-image {
-  max-width: 55%;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.details-holder div {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.details-holder h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.details-holder p {
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
 .details-holder button {
-    float: right;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    left: 0;
+    transition: none;
+  }
+
+  .details-holder {
+    margin: 20px 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .d-car-image {
+    margin-bottom: 0;
+  }
+
+  .details-holder div {
+    margin-left: 20px;
+    text-align: left;
+  }
+}
+
