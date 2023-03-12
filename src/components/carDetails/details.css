@@ -1,8 +1,8 @@
 .main-holder {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .details-holder {
@@ -17,17 +17,17 @@
 
 .d-car-image {
   width: 100%;
-  max-width: 450px;
+  max-width: 400px;
   height: auto;
   margin-bottom: 20px;
 }
 
 .car-info {
-  width: 350px;
+  width: 100%;
   padding: 20px;
   background-color: #f2f2f2;
   border-radius: 10px;
-  text-align:start;
+  text-align: start;
 }
 
 .details-holder h2 {
@@ -41,7 +41,7 @@
 }
 
 .details-holder button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 5px;
@@ -51,7 +51,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-
   .details-holder {
     margin: 20px 20px 20px 0;
     display: flex;
@@ -67,4 +66,3 @@
     text-align: left;
   }
 }
-

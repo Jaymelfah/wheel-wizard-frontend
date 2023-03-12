@@ -1,71 +1,71 @@
 .del-container {
-    margin-top: 5%;
-    height: 100vh;
-    align-items: center;
-    flex-direction: column;
-    background-image: url(https://cdn.pixabay.com/photo/2016/06/25/10/49/seat-128-1478647_960_720.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-  .del-container::before {
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(150, 191, 2, 0.929); /* set the background color with transparency */
-    position: absolute; /* make the pseudo-element positioned relative to the container */
-  }
-  
-  .del-list {
-    display: flex;
-    width: 50%;
-    align-items: stretch;
-    flex-direction: column;
-    padding-left: 0;
-    background-color: white;
-    z-index: 10;
-    box-shadow: -1px 4px 5px 0 rgba(42, 43, 42, 0.64);
-    -webkit-box-shadow: -1px 4px 5px 0 rgba(25, 26, 25, 0.64);
-    -moz-box-shadow: -1px 4px 5px 0 rgba(38, 38, 36, 0.64);
-  }
-  
-  .list-group-item {
-    display: flex;
-    align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  
-  .images {
-    width: 100px; /* adjust to yosur desired size */
-  }
-  
-  .del-car-image {
-    width: 60px;
-    margin-left: 3rem;
-    height: 60px;
-    object-fit: contain;
-  }
-  
-  .cars {
-    flex: 0.2;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  
-  .del {
-    width: 80px; 
-  }
-  
-  .del-header {
-    justify-content: center;
-    gap: 1rem;
-    padding-top: 0.8rem;
-  }
-  
-  .trash {
-    width: 50px;
-    height: 50px;
-  }
+  margin-top: 5%;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(https://cdn.pixabay.com/photo/2016/06/25/10/49/seat-128-1478647_960_720.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.del-container::before {
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(150, 191, 2, 0.929); /* set the background color with transparency */
+  position: absolute; /* make the pseudo-element positioned relative to the container */
+}
+
+.del-list {
+  display: flex;
+  width: 50%;
+  align-items: stretch;
+  flex-direction: column;
+  padding-left: 0;
+  background-color: white;
+  z-index: 10;
+  box-shadow: -1px 4px 5px 0 rgba(42, 43, 42, 0.64);
+  -webkit-box-shadow: -1px 4px 5px 0 rgba(25, 26, 25, 0.64);
+  -moz-box-shadow: -1px 4px 5px 0 rgba(38, 38, 36, 0.64);
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.images {
+  width: 100px; /* adjust to yosur desired size */
+}
+
+.del-car-image {
+  width: 60px;
+  margin-left: 3rem;
+  height: 60px;
+  object-fit: contain;
+}
+
+.cars {
+  flex: 0.2;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.del {
+  width: 80px;
+}
+
+.del-header {
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 0.8rem;
+}
+
+.trash {
+  width: 50px;
+  height: 50px;
+}

@@ -21,9 +21,9 @@ label {
   margin-bottom: -0.5rem;
 }
 
- input[type="text"],
- input[type="number"],
- input[type="date"] {
+input[type="text"],
+input[type="number"],
+input[type="date"] {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
@@ -31,7 +31,7 @@ label {
   box-sizing: border-box;
 }
 
- button[type="submit"] {
+button[type="submit"] {
   background-color: #4caf50;
   color: #fff;
   padding: 8px 16px;
