@@ -27,7 +27,7 @@ const DetailsPage = () => {
       {car ? (
         <section className='details-holder'>
           <img src={car.image_url} className='d-car-image' />
-          <div>
+          <div className='car-info'>
           <h2>NAME: {car.name}</h2>
           <p>PRICE: {car.price}$</p>
           <p>DISCRIPTION: {car.description}</p>

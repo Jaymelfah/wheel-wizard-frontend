@@ -1,28 +1,33 @@
-.details-holder {
-    padding: 50px;
+.main-holder {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .details-holder {
+  position: absolute;
+  left: 20%;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   margin: 20px;
+  padding: 50px;
 }
 
 .d-car-image {
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   height: auto;
   margin-bottom: 20px;
 }
 
-.details-holder div {
-  width: 100%;
-  max-width: 400px;
+.car-info {
+  width: 350px;
   padding: 20px;
   background-color: #f2f2f2;
   border-radius: 10px;
-  text-align: center;
+  text-align:start;
 }
 
 .details-holder h2 {
@@ -46,14 +51,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .container {
-    flex-direction: row;
-  }
-
-  .sidebar {
-    left: 0;
-    transition: none;
-  }
 
   .details-holder {
     margin: 20px 20px 20px 0;
@@ -65,7 +62,7 @@
     margin-bottom: 0;
   }
 
-  .details-holder div {
+  .car-info {
     margin-left: 20px;
     text-align: left;
   }
