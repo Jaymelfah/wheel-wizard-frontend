@@ -1,27 +1,28 @@
-.cars-cont {
-  width: 80%;
-  margin-left: 20%;
-  height: 100vh;
-}
 
 .cars-container {
   align-items: center;
   gap: 3rem;
-  justify-content: space-between;
-  width: 60%;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  position: relative;
-  scroll-snap-type: x mandatory;
+  width: 100%;
 }
 
-.cars-container::-webkit-scrollbar {
+.cars-box::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
 
-.cars-container::-webkit-scrollbar-thumb {
+.cars-box::-webkit-scrollbar-thumb {
   background-color: transparent;
+}
+
+.cars-box {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  position: relative;
+  scroll-snap-type: x mandatory;
+  width: 88rem;
+  justify-content: space-between;
+  gap: 10rem;
+  margin-left: 12%;
 }
 
 .cars-container .pagination-btn {
@@ -34,15 +35,13 @@
   justify-content: flex-end;
   border: none;
   padding: 8px 0;
-  position: fixed;
-  top: 50%;
   z-index: 1;
   transform: translateY(-50%);
+  position: absolute;
+  margin: 0;
 }
 
-.left {
-  left: 25%;
-}
+
 
 .cars-container .pagination-btn.right {
   border-bottom-left-radius: 40px;
@@ -50,8 +49,7 @@
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
   justify-content: flex-start;
-  right: 5%;
-  left: auto;
+  right: 0;
 }
 
 @media only screen and (max-width: 768px) {

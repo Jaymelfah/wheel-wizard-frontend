@@ -4,6 +4,7 @@
   height: 100vh;
   width: fit-content;
   visibility: hidden;
+  z-index: 99999;
 }
 
 .sidebar-active {
@@ -28,14 +29,14 @@
   justify-content: flex-end;
   border: none;
   padding-right: 1rem;
-  z-index: 1111111;
+  z-index: 999999999;
   box-shadow: -1px 4px 5px 0 rgba(42, 43, 42, 0.769);
   -webkit-box-shadow: -1px 4px 5px 0 rgba(25, 26, 25, 0.64);
   -moz-box-shadow: -1px 4px 5px 0 rgba(38, 38, 36, 0.703);
   visibility: visible !important;
   position: fixed;
   bottom: 10%;
-  left: 17rem;
+  left: 15rem;
 }
 
 .toggle-sidebar-btn.move {
