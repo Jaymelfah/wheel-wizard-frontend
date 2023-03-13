@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCars, deleteCar } from '../../redux/deletecar/deletecar';
+import trashcan from '../../assets/trash.gif';
 import './deletecar.css';
 
 const RemoveCar = () => {
@@ -34,6 +35,7 @@ const RemoveCar = () => {
           <h2>
             Delete A Car
           </h2>
+          <img src={trashcan} alt="trash" className="trash" />
         </div>
         {cars.map((car) => (
           <li key={car.id} className="list-group-item d-flex justify-content-between align-items-start">

@@ -32,7 +32,7 @@ const Modal = ({ selectedCar, setIsModalOpen }) => {
       reservation_date: reservationDate,
       duration,
       car_id: selectedCar.id,
-      city: selectedCity,
+      city: selectedCity.value,
     };
     dispatch(addReservation(data));
     dispatch(fetchReservations());

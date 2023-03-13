@@ -1,0 +1,17 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  height: 100vh;
+}
+
+.plain-btn {
+  margin: 0 !important;
+  background: none !important;
+  border: 1px solid #98c10f !important;
+  width: 6rem;
+  align-self: center;
+}

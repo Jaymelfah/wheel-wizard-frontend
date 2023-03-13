@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Modal from './detailsmodal';
 import './details.css';
+import { URL } from '../../constants';
 
 const DetailsPage = () => { 
   const { id } = useParams(); 
@@ -17,7 +18,7 @@ const DetailsPage = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/v1/cars/${id}`)
+    fetch(`${URL}/api/v1/cars/${id}`)
       .then(response => response.json())
       .then(data => setCar(data));
   }, [id]);

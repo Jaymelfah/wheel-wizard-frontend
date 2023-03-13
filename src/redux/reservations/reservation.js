@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { URL } from '../../constants';
 
-const url = 'http://localhost:3000/api/v1/reservations';
+const BASE_URL = `${URL}/api/v1/reservations`;
 const initialState = [];
-const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOjF9.eLvmI-jvl7iBj2Kix4Kor20Nwur4F53KuB1NayRYJaQ';
+const token = localStorage.getItem('token');
 
 export const fetchReservations = createAsyncThunk('reservations/getData', async () => {
-  const response = await fetch(url, {
+  const response = await fetch(BASE_URL, {
     method: 'GET',
     headers: {
       'Content-type': 'application/json',
@@ -17,7 +18,7 @@ export const fetchReservations = createAsyncThunk('reservations/getData', async 
 });
 
 export const addReservation = createAsyncThunk('reservations/addData', async (payload) => {
-  const response = await fetch(url, {
+  const response = await fetch(BASE_URL, {
     method: 'POST',
     body: JSON.stringify({ reservation: payload }),
     headers: {
@@ -29,7 +30,7 @@ export const addReservation = createAsyncThunk('reservations/addData', async (pa
 });
 
 export const deleteReservation = createAsyncThunk('reservations/deleteData', async (id) => {
-  const remove = await fetch(`${url}/${id}`, {
+  const remove = await fetch(`${BASE_URL}/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-type': 'application/json',
