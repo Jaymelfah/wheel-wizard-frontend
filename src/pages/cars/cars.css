@@ -5,15 +5,6 @@
   width: 100%;
 }
 
-.cars-box::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
-
-.cars-box::-webkit-scrollbar-thumb {
-  background-color: transparent;
-}
-
 .cars-box {
   overflow-x: scroll;
   scroll-behavior: smooth;
@@ -23,6 +14,15 @@
   justify-content: space-between;
   gap: 10rem;
   margin-left: 12%;
+}
+
+.cars-box::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.cars-box::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }
 
 .cars-container .pagination-btn {
@@ -40,8 +40,6 @@
   position: absolute;
   margin: 0;
 }
-
-
 
 .cars-container .pagination-btn.right {
   border-bottom-left-radius: 40px;
