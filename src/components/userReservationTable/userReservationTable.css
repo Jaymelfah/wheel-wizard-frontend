@@ -9,5 +9,5 @@
 table {
   margin: 5rem;
   box-shadow: 1px 4px 8px 2px;
-  height: fit-content;
+  height: max-content;
 }
