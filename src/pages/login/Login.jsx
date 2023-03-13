@@ -24,7 +24,7 @@ const LoginForm = () => {
   return (
     <div className="form-cont">
       <Form className="login-form" onSubmit={handleSubmit}>
-        <h1 className="sidebar-title pt-3 ml-5">WheelWizard</h1>
+        <h1 className="sidebar-title-signup pt-3 ml-5">WheelWizard</h1>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
             type="email"
