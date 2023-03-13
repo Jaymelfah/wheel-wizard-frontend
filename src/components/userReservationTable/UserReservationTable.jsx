@@ -53,8 +53,6 @@ const UserReservationTable = () => {
             <th>
               Car Name
               {' '}
-              {' '}
-              {' '}
               <img src={car} alt="date" className="table-img" />
             </th>
             <th>
