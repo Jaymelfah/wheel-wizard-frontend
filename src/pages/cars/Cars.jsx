@@ -51,12 +51,11 @@ function Cars() {
   }, [dispatch]);
 
   return (
-    <div className="d-flex flex-column align-items-center cars-cont">
+    <div className="d-flex flex-column align-items-center w-100">
       <h2 style={{ marginTop: '3rem' }}>Latest Models</h2>
       <p style={{ color: 'rgb(182 183 184)' }}>Please select a car model</p>
       <div
-        className="d-flex flex-row cars-container"
-        ref={carsContainerRef}
+        className="d-flex flex-row cars-container position-relative"
       >
         <button
           type="button"
@@ -66,7 +65,7 @@ function Cars() {
         >
           <RxIcons.RxTriangleLeft size="3em" />
         </button>
-        <div className="d-flex flex-row align-items-baseline justify-content-center">
+        <div className="d-flex flex-row align-items-baseline cars-box" ref={carsContainerRef}>
           {cars.map((car) => (
             <CarCard car={car} key={car.id} />
           ))}
