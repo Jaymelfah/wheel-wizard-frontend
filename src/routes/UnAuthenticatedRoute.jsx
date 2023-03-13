@@ -5,7 +5,7 @@ import SignupForm from '../pages/signup/Signup';
 
 const UnAuthenticatedRoute = () => (
   <Routes>
-    <Route path="/" element={<LoginForm />} />
+    <Route path="*" element={<LoginForm />} />
     <Route path="/login" element={<LoginForm />} />
     <Route path="/signup" element={<SignupForm />} />
   </Routes>

@@ -1,8 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { URL } from '../../constants';
 
-const Url = 'http://localhost:3002/api/v1/cars';
+const BASE_URL = `${URL}/api/v1/cars`;
 
 const initialState = {
   status: null,
@@ -12,7 +13,7 @@ export const createCar = createAsyncThunk(
   'create/createCar',
   async (payload, thunkAPI) => {
     try {
-      const response = await axios.post(Url, payload, {
+      const response = await axios.post(BASE_URL, payload, {
         car: payload,
       });
       return response.data;

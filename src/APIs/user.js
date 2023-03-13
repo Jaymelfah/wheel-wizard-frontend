@@ -1,10 +1,9 @@
 import axios from 'axios';
-
-const BASE_URL = 'http://localhost:3002';
+import { URL } from '../constants';
 
 export const createAccount = async (reqBody) => {
   try {
-    const response = await axios.post(`${BASE_URL}/users`, { user: reqBody });
+    const response = await axios.post(`${URL}/users`, { user: reqBody });
     return response.data;
   } catch (error) {
     throw new Error(error);
@@ -13,7 +12,7 @@ export const createAccount = async (reqBody) => {
 
 export const getToken = async (reqBody) => {
   try {
-    const response = await axios.post(`${BASE_URL}/users/sign_in`, {
+    const response = await axios.post(`${URL}/users/sign_in`, {
       user: reqBody,
     });
     return response.data.token;

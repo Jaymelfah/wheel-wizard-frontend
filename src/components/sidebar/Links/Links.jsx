@@ -21,8 +21,8 @@ function Links() {
           <Link
             to={item.path}
             key={item.id}
-            className="sidebar-link-box"
-            onClick={item.title === 'Logout' ? handleLogout : null}
+            className={`sidebar-link-box ${item.cName}`}
+            onClick={item.title === 'LOGOUT' ? handleLogout : null}
           >
             <li className="link-name">
               {item.icon}
