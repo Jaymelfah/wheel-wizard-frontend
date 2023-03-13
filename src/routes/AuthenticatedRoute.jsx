@@ -22,4 +22,5 @@ const AuthenticatedRoute = () => (
     </Routes>
   </>
 );
+
 export default AuthenticatedRoute;
