@@ -31,7 +31,8 @@
   transform: rotate(-13deg);
   text-align: center;
   color: #fff;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  font-size: 3rem;
 }
 
 .form-cont::before {
