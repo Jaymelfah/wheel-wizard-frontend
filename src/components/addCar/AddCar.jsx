@@ -30,8 +30,9 @@ const AddCar = () => {
     data.append('car[model]', carData.model);
     data.append('car[year]', carData.year);
 
-    dispatch(createCar(data));
-    gohome();
+    dispatch(createCar(data)).then(() => {
+      gohome();
+    });
   };
 
   const handleImageChange = (e) => {

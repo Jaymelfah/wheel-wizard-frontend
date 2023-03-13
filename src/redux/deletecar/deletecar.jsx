@@ -3,8 +3,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import getCarsFromDB from '../../APIs/cars';
+import { URL } from '../../constants';
 
-const Url = 'http://localhost:3002/api/v1/cars';
+const Url = `${URL}/api/v1/cars`;
 
 export const deleteCar = createAsyncThunk(
   'delete/deleteCar',

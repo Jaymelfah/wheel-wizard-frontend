@@ -1,40 +1,38 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import Select from 'react-select';
 import PropTypes from 'prop-types';
 import './modal.css';
 import { useNavigate } from 'react-router-dom';
-import { getCars } from '../../redux/cars/cars';
 import { addReservation, fetchReservations } from '../../redux/reservations/reservation';
 
-const Modal = ({ selectedCity, setIsModalOpen }) => {
-  const [carName, setCarName] = useState('');
+const cities = [
+  { value: 'new-york', label: 'New York' },
+  { value: 'los-angeles', label: 'Los Angeles' },
+  { value: 'san-francisco', label: 'San Francisc' },
+  { value: 'bradenton-beach', label: 'Bradenton Beach' },
+  { value: 'charlottetown', label: 'Charlottetown' },
+  { value: 'bankog', label: 'Bankog' },
+  { value: 'Beijing', label: 'Beijing' },
+];
+
+const Modal = ({ selectedCar, setIsModalOpen }) => {
   const [duration, setDuration] = useState('');
   const [reservationDate, setReservationDate] = useState('');
-  const carsData = useSelector((state) => state.cars);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const gohome = () => navigate('/myreservations');
-
-  const cars = carsData.map((car) => ({
-    id: car.id,
-    car_name: car.name,
-  }));
-
-  useEffect(() => {
-    dispatch(getCars());
-  }, [dispatch]);
+  const [selectedCity, setSelectedCity] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const selectedCar = cars.find((car) => car.car_name === carName);
-    const carId = selectedCar ? selectedCar.id : null;
     const data = {
       reservation_date: reservationDate,
       duration,
-      car_id: carId,
-      city: selectedCity,
+      car_id: selectedCar.id,
+      city: selectedCity.value,
     };
     dispatch(addReservation(data));
     dispatch(fetchReservations());
@@ -49,13 +47,28 @@ const Modal = ({ selectedCity, setIsModalOpen }) => {
       <h3>Fill the fieds below</h3>
 
       <label htmlFor="carName">Car Name:</label>
-      <select id="carName" value={carName} onChange={(e) => setCarName(e.target.value)}>
-        <option value="">Select a car</option>
-        {cars.map((car) => (
-          <option key={car.id} value={car.car_name}>{car.car_name}</option>
-        ))}
+      <select id="carName">
+        <option key={selectedCar.id} value={selectedCar.name}>{selectedCar.name}</option>
       </select>
-
+      <label htmlFor="select_city">Select a city</label>
+      <Select
+        id="select_city"
+        className="select"
+        options={cities}
+        value={selectedCity}
+        onChange={setSelectedCity}
+        styles={{
+          control: (provided) => ({
+            ...provided,
+            borderRadius: '25px',
+            height: '2.7rem',
+            background: '#a2d31a',
+            border: '1px solid white',
+            width: '10.2rem',
+            color: 'white',
+          }),
+        }}
+      />
       <label htmlFor="duration">Duration:</label>
       <input
         type="number"
