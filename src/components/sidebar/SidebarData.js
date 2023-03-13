@@ -44,10 +44,10 @@ export const navLinks = [
   },
   {
     id: 6,
-    title: 'Logout',
+    title: 'LOGOUT',
     icon: <RiIcons.RiDeleteBack2Line />,
     path: '/',
-    cName: 'sidebar-link',
+    cName: 'sidebar-link logout-btn',
     action: 'logout',
   },
 ];
