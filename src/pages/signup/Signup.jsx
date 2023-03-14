@@ -41,6 +41,7 @@ const SignupForm = () => {
             placeholder="Enter your name"
             value={name}
             onChange={(event) => setName(event.target.value)}
+            required
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -49,6 +50,7 @@ const SignupForm = () => {
             placeholder="Enter email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
+            required
           />
         </Form.Group>
 
@@ -58,6 +60,7 @@ const SignupForm = () => {
             placeholder="Password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
+            required
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formConfirmPassword">
@@ -66,6 +69,7 @@ const SignupForm = () => {
             placeholder="Password Confirmation"
             value={confirmPassword}
             onChange={(event) => setConfirmPassword(event.target.value)}
+            required
           />
         </Form.Group>
         <Button variant="primary" type="submit">

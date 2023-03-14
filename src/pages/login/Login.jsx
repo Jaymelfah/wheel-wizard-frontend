@@ -31,6 +31,7 @@ const LoginForm = () => {
             placeholder="Enter email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
+            required
           />
         </Form.Group>
 
@@ -40,6 +41,7 @@ const LoginForm = () => {
             placeholder="Password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
+            required
           />
         </Form.Group>
         <Button variant="primary" type="submit">
