@@ -41,20 +41,20 @@ const Modal = ({ selectedCar, setIsModalOpen }) => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-    >
-      <h3>Fill the fieds below</h3>
+    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
+      <h3>Fill the fields below</h3>
 
       <label htmlFor="carName">Car Name:</label>
       <select id="carName">
         <option key={selectedCar.id} value={selectedCar.name}>{selectedCar.name}</option>
       </select>
-      <label htmlFor="select_city">Select a city</label>
+
+      <label htmlFor="select_city">Select a city:</label>
       <Select
         aria-labelledby="select_city"
         className="select"
         options={cities}
+        required
         value={selectedCity}
         onChange={setSelectedCity}
         styles={{
@@ -69,8 +69,10 @@ const Modal = ({ selectedCar, setIsModalOpen }) => {
           }),
         }}
       />
+
       <label htmlFor="duration">Duration:</label>
       <input
+        required
         type="number"
         id="duration"
         value={duration}
@@ -80,12 +82,64 @@ const Modal = ({ selectedCar, setIsModalOpen }) => {
       <label htmlFor="reservationDate">Reservation Date:</label>
       <input
         type="date"
+        required
         id="reservationDate"
         value={reservationDate}
         onChange={(e) => setReservationDate(e.target.value)}
       />
 
       <button type="submit">Book Reservation</button>
+
+      <style>
+        {`
+    form {
+      padding: 0 1rem;
+      font-size: 1rem;
+    }
+
+    label {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+    }
+
+    input,
+    select {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+
+    button {
+      margin-top: 1rem;
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+
+    @media screen and (min-width: 768px) {
+      form {
+        font-size: 1.2rem;
+      }
+
+      label {
+        margin-top: 1.5rem;
+        font-size: 1rem;
+      }
+
+      input,
+      select {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        padding: 0.7rem;
+      }
+
+      button {
+        margin-top: 1.5rem;
+        font-size: 1.2rem;
+        padding: 0.7rem;
+      }
+    }
+  `}
+      </style>
     </form>
   );
 };
