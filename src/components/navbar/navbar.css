@@ -8,6 +8,9 @@
     display: flex !important;
     flex-direction: row;
     padding: 15px;
+    position: absolute;
+    top: 0;
+    width: 100%;
     z-index: 9999999999;
   }
 
