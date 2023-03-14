@@ -68,6 +68,11 @@
   color: #fff;
 }
 
+.invalid {
+  color: rgba(249, 32, 32, 0.868);
+  font-size: 11px;
+}
+
 @media only screen and (max-width: 768px) {
   .login-form {
     width: 90%;

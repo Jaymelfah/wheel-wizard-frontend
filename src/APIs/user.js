@@ -17,6 +17,7 @@ export const getToken = async (reqBody) => {
     });
     return response.data.token;
   } catch (error) {
+    // return error.response.data;
     throw new Error(error);
   }
 };
