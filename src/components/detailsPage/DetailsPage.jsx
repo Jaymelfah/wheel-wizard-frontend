@@ -2,9 +2,13 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Modal from './detailsmodal';
+import { Link } from 'react-router-dom';
 import './details.css';
 import { URL } from '../../constants';
 import loader from '../../assets/loader.gif'
+import rotate from '../../assets/rotate.svg'
+import arrow from '../../assets/right-arrow.svg'
+import circle from '../../assets/circle.png'
 
 const DetailsPage = () => { 
   const { id } = useParams(); 
@@ -24,19 +28,33 @@ const DetailsPage = () => {
       .then(data => setCar(data));
   }, [id]);
 
+  const turnImage= () => {
+    var img = document.getElementById("myImage");
+    img.classList.toggle("rotate-image");
+  };
+
   return (
     <div className='main-holder'>
       {car ? (
         <section className='details-holder'>
-          <img src={car.image_url} className='d-car-image' />
+          <div>
+          <img id="myImage" src={car.image_url} className='d-car-image' />
+          <span className='rotate-btn' onClick={turnImage}><img src={rotate} alt="rotate" width="40px" />Rotate</span>
+          </div>
           <div className='car-info'>
-          <h2>NAME: {car.name}</h2>
-          <p>PRICE: {car.price}$</p>
-          <p>DISCRIPTION: {car.description}</p>
-          <p>TEST DRIVE FEE: {car.test_drive_fee}$</p>
-          <p>MODEL: {car.model}</p>
-          <p>YEAR MANUFACTURED: {car.year}</p>
-          <button onClick={handleModalOpen}>Reserve</button>
+          <ul>
+          <li className='name'>{car.name}</li>
+          <li className='-info'>PRICE <span>{car.price}$</span></li>
+          <li className='-info'>DISCRIPTION <span>{car.description}</span></li>
+          <li className='-info'>TEST DRIVE FEE <span>{car.test_drive_fee}$</span></li>
+          <li className='-info'>MODEL <span>{car.model}</span></li>
+          <li className='-info'>YEAR MANUFACTURED <span>{car.year}</span></li>
+          <div className='link'>
+          <Link to={'/'} className="discover">Discover more cars <img src={arrow} alt="left arrow" width="10px" /></Link>
+          <img className='circle' src={circle} alt="circle"/>
+          <button onClick={handleModalOpen}>Reserve +</button>
+          </div>
+          </ul>
           </div>
         </section>
       ) : (
