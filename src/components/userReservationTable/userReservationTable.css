@@ -1,13 +1,64 @@
-.modal-footer {
-  background: rgb(216, 216, 177);
+.tablecont {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../assets/listcars.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-table {
-  margin: 5rem;
+.table {
+  margin-top: 8rem;
   box-shadow: 1px 4px 8px 2px;
   height: max-content;
+  width: 60%;
+  background-color: #fff;
+  z-index: 100;
+}
+
+.table-img {
+  width: 15px;
+  height: 15px;
+  margin-left: 0.5rem;
+}
+
+.tablecont::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(150, 191, 2, 0.829);
+}
+
+@media only screen and (max-width: 768px) {
+  .table {
+    width: 20rem;
+    overflow: hidden;
+    font-size: 9px;
+  }
+
+  .table th:first-child,
+  .table td:first-child {
+    display: none;
+  }
+
+  .table th:nth-child(4),
+  .table th:nth-child(5) {
+    text-align: center;
+  }
+
+  .table-btn {
+    width: fit-content;
+    font-size: 6px;
+    padding: 0.1rem;
+  }
+
+  .table-img {
+    width: 10px;
+    height: 10px;
+  }
 }

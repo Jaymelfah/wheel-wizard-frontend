@@ -45,13 +45,13 @@ const UserReservationTable = () => {
   };
 
   return (
-    <>
-      <Table striped bordered hover>
+    <div className="tablecont">
+      <Table striped bordered hover className="table">
         <thead>
           <tr>
             <th>ID</th>
             <th>
-              Car Name
+              Car
               {' '}
               <img src={car} alt="date" className="table-img" />
             </th>
@@ -92,13 +92,13 @@ const UserReservationTable = () => {
                   {' '}
                   hrs
                 </td>
-                <td><Button variant="danger" onClick={() => handleCancelClick(reservation.id)}>Cancel Reservation</Button></td>
+                <td><Button className="table-btn" variant="danger" onClick={() => handleCancelClick(reservation.id)}>Cancel Reservation</Button></td>
               </tr>
             );
           })}
         </tbody>
       </Table>
-    </>
+    </div>
   );
 };
 
