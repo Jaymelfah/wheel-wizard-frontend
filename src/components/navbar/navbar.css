@@ -1,0 +1,22 @@
+
+.mob-nav {
+  display: none !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .mob-nav {
+    display: flex !important;
+    flex-direction: row;
+    padding: 15px;
+    z-index: 9999999999;
+  }
+
+  .hamburger-btn {
+    color: aliceblue !important;
+    outline: none;
+  }
+
+  .hamburger-btn:focus {
+    outline: 2px;
+  }
+}

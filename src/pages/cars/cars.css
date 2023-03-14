@@ -13,7 +13,6 @@
   width: 88rem;
   justify-content: space-between;
   gap: 10rem;
-  margin-left: 12%;
 }
 
 .cars-box::-webkit-scrollbar {
@@ -41,6 +40,10 @@
   margin: 0;
 }
 
+.cars-container .pagination-btn.left {
+  left: 0;
+}
+
 .cars-container .pagination-btn.right {
   border-bottom-left-radius: 40px;
   border-top-left-radius: 40px;
@@ -54,5 +57,9 @@
   .cars-container {
     gap: 0;
     justify-content: flex-start;
+  }
+
+  .pagination-btn {
+    display: none !important;
   }
 }

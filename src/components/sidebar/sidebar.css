@@ -49,11 +49,10 @@
 
 @media only screen and (max-width: 768px) {
   .sidebar-container {
-    position: relative;
-    visibility: visible !important;
+    display: none !important;
   }
 
-  .sidebar-active {
-    visibility: hidden !important;
+  .toggle-sidebar-btn {
+    display: none !important;
   }
 }

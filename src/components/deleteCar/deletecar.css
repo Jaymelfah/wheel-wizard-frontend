@@ -69,3 +69,18 @@
   width: 50px;
   height: 50px;
 }
+
+@media only screen and (max-width: 768px) {
+  .del-container {
+    margin-top: 5rem;
+    height: auto;
+  }
+
+  .del-list {
+    width: 92%;
+  }
+
+  .del-car-image {
+    margin-left: 0;
+  }
+}

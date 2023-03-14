@@ -7,9 +7,11 @@ import UserReservationTable from '../components/userReservationTable/UserReserva
 import RemoveCar from '../components/deleteCar/deletecar';
 import ReservationForm from '../components/reservationForm/ReservationForm';
 import DetailsPage from '../components/detailsPage/DetailsPage';
+import Navbar from '../components/navbar/MobNavbar';
 
 const AuthenticatedRoute = () => (
   <>
+    <Navbar />
     <SideBar />
     <Routes>
       <Route path="/login" element={<Navigate to="/" />} />
