@@ -52,7 +52,7 @@ const Modal = ({ selectedCar, setIsModalOpen }) => {
       </select>
       <label htmlFor="select_city">Select a city</label>
       <Select
-        id="select_city"
+        aria-labelledby="select_city"
         className="select"
         options={cities}
         value={selectedCity}
