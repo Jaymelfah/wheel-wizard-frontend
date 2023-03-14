@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import { URL } from '../constants';
 
 export const createAccount = async (reqBody) => {
@@ -17,7 +18,9 @@ export const getToken = async (reqBody) => {
     });
     return response.data.token;
   } catch (error) {
-    // return error.response.data;
+    if (error.response.status === 401) {
+      toast.error('Invalid email or password', { position: 'top-right' });
+    }
     throw new Error(error);
   }
 };

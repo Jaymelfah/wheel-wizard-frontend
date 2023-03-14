@@ -1,29 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './login.css';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { login } from '../../redux/auth/auth';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [invalid, setInvalid] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const error = useSelector((state) => state.auth.error);
-
-  useEffect(() => {
-    if (error === 'AxiosError: Request failed with status code 401') {
-      setInvalid(true);
-    }
-  }, [submitted, error]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSubmitted(true);
     const reqBody = {
       email,
       password,
@@ -57,13 +49,13 @@ const LoginForm = () => {
         <Button variant="primary" type="submit">
           Login
         </Button>
-        { submitted && invalid && <span className="invalid">Invalid Email or password</span> }
         <div className="d-flex account">
           <p>No account yet? Click here to Sign Up</p>
           <Button variant="white" type="button" className="btn plain-btn" onClick={() => navigate('/signup')}>
             Sign up
           </Button>
         </div>
+        <ToastContainer style={{ width: '320px' }} theme="colored" />
       </Form>
     </div>
   );
