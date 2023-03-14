@@ -66,3 +66,12 @@ form label {
   display: flex;
   align-items: center;
 }
+
+@media only screen and (max-width: 768px) {
+  .add-car-form {
+    width: 92%;
+  }
+  .form-container {
+    height: 90vh;
+  }
+}
