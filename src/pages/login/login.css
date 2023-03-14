@@ -1,11 +1,48 @@
+.form-cont {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../../assets/splash-car.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .login-form {
   display: flex;
+  width: 30rem;
   flex-direction: column;
-  width: 100%;
   justify-content: center;
+  height: 40rem;
   flex-wrap: wrap;
   align-content: center;
-  height: 100vh;
+  z-index: 9;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.sidebar-title-signup {
+  font-family: "Dr Sugiyama", cursive;
+  text-decoration: underline;
+  transform: rotate(-13deg);
+  text-align: center;
+  color: #fff;
+  margin-bottom: 4rem;
+  font-size: 3rem;
+}
+
+.form-cont::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.636);
 }
 
 .plain-btn {
@@ -14,4 +51,33 @@
   border: 1px solid #98c10f !important;
   width: 6rem;
   align-self: center;
+}
+
+.account {
+  color: #fff;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.account > p {
+  margin-top: 13px;
+}
+
+.account > button {
+  color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  .login-form {
+    width: 90%;
+  }
+
+  .account {
+    gap: 0.2rem;
+  }
+
+  .account > p {
+    font-size: 11px;
+  }
 }

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Modal from './detailsmodal';
 import './details.css';
 import { URL } from '../../constants';
+import loader from '../../assets/loader.gif'
 
 const DetailsPage = () => { 
   const { id } = useParams(); 
@@ -39,7 +40,7 @@ const DetailsPage = () => {
           </div>
         </section>
       ) : (
-        <p>Loading...</p>
+       <img src={loader} alt="loading" />
       )}
       {isModalOpen && (
         <div className="modal">

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as RxIcons from 'react-icons/rx';
 import { getCars } from '../../redux/cars/cars';
 import CarCard from './CarCard/CarCard';
+import loader from '../../assets/loader.gif';
 import './cars.css';
 
 function Cars() {
@@ -52,33 +53,40 @@ function Cars() {
 
   return (
     <div className="d-flex flex-column align-items-center w-100">
-      <h2 style={{ marginTop: '3rem' }}>Latest Models</h2>
-      <p style={{ color: 'rgb(182 183 184)' }}>Please select a car model</p>
-      <div
-        className="d-flex flex-row cars-container position-relative"
-      >
-        <button
-          type="button"
-          onClick={handlePrevPage}
-          className="pagination-btn btn left"
-          disabled={prevButtonDisabled}
-        >
-          <RxIcons.RxTriangleLeft size="3em" />
-        </button>
-        <div className="d-flex flex-row align-items-baseline cars-box" ref={carsContainerRef}>
-          {cars.map((car) => (
-            <CarCard car={car} key={car.id} />
-          ))}
-        </div>
-        <button
-          type="button"
-          onClick={handleNextPage}
-          className="pagination-btn btn right"
-          disabled={nextButtonDisabled}
-        >
-          <RxIcons.RxTriangleRight size="3em" />
-        </button>
-      </div>
+      { cars
+        ? (
+          <>
+            <h2 style={{ marginTop: '3rem' }}>Latest Models</h2>
+            <p style={{ color: 'rgb(182 183 184)' }}>Please select a car model</p>
+            <div
+              className="d-flex flex-row cars-container position-relative"
+            >
+              <button
+                type="button"
+                onClick={handlePrevPage}
+                className="pagination-btn btn left"
+                disabled={prevButtonDisabled}
+              >
+                <RxIcons.RxTriangleLeft size="3em" />
+              </button>
+              <div className="d-flex flex-row align-items-baseline cars-box" ref={carsContainerRef}>
+                {cars.map((car) => (
+                  <CarCard car={car} key={car.id} />
+                ))}
+              </div>
+              <button
+                type="button"
+                onClick={handleNextPage}
+                className="pagination-btn btn right"
+                disabled={nextButtonDisabled}
+              >
+                <RxIcons.RxTriangleRight size="3em" />
+              </button>
+            </div>
+
+          </>
+        )
+        : <img src={loader} alt="loading..." />}
     </div>
   );
 }
