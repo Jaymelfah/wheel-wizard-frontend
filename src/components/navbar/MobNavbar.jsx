@@ -11,7 +11,7 @@ const MobNavbar = () => {
   };
   return (
     <Navbar bg="light" expand="lg" className="mob-nav" expanded={open}>
-      <h1 className="m-0">WheelWizard</h1>
+      <h1 className="sidebar-title pt-3 ml-5">WheelWizard</h1>
       <Navbar.Toggle
         aria-controls="basic-navbar-nav"
         style={{ backgroundColor: '#98c10f', outline: 'none' }}
