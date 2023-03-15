@@ -4,22 +4,26 @@ import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import { useDispatch } from 'react-redux';
+import loader from '../../assets/loader2.gif';
 
 import { login } from '../../redux/auth/auth';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
     const reqBody = {
       email,
       password,
     };
-    dispatch(login(reqBody));
+    await dispatch(login(reqBody));
+    setIsLoading(false);
   };
 
   return (
@@ -46,7 +50,7 @@ const LoginForm = () => {
           />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Login
+          {isLoading ? <img src={loader} alt="loading" className="spinner" /> : 'Login'}
         </Button>
         <div className="d-flex account">
           <p>No account yet? Click here to Sign Up</p>
