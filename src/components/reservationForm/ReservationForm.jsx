@@ -70,6 +70,10 @@ function ReservationForm() {
                 ...provided,
                 color: 'white',
               }),
+              menu: (provided) => ({
+                ...provided,
+                zIndex: 100,
+              }),
             }}
           />
 
