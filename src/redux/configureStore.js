@@ -12,7 +12,6 @@ const initialState = {
     token: token || null,
     isAuthenticated: !!token,
   },
-  reservations: [],
 };
 
 const rootReducer = combineReducers({
