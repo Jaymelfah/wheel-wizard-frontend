@@ -2,6 +2,7 @@
 import React from 'react';
 import { useColor } from 'color-thief-react';
 import './color.css'
+import carload from '../../../assets/carload.gif'
 
 function ImageWithColors({ src }) {
   const { data, loading, error } = useColor(src, 'hex', {
@@ -9,11 +10,18 @@ function ImageWithColors({ src }) {
   });
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+          <img src={carload} alt="loading" className="carload" />
+      </div>);
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return (
+      <div style={{backgroundColor: '#afacac'}} className="back-for-cars">
+        
+      </div>
+    );
   }
 
   return (

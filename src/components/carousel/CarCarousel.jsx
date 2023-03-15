@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import CarCard from '../../pages/cars/CarCard/CarCard';
 import * as RxIcons from 'react-icons/rx';
+import './carousel.css'
 
 
 const CarCarousel = ({ cars }) => {
@@ -39,7 +40,7 @@ const CarCarousel = ({ cars }) => {
           <RxIcons.RxTriangleLeft size="3em" />
         </button>
       </div>
-      <Carousel activeIndex={index} onSelect={handleSelect} interval={null} className="w-100" >
+      <Carousel activeIndex={index} onSelect={handleSelect} interval={null} className="w-100" controls={false}>
         {cars.map((car, i) => {
             return (
               <Carousel.Item key={i}>

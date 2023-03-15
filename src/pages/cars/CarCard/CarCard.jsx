@@ -19,7 +19,7 @@ function CarCard({ car }) {
     <div className="car-card d-flex flex-column p-5 position-relative">
       <img src={car.image_url} className='car-image d-flex flex-column' ref={imageRef} />
       <ImageWithColors src={image} />
-      <h2 style={{margin: '3rem'}}>{car.name}</h2>
+      <h2 style={{margin: '3rem'}} className="car-name">{car.name}</h2>
       <p style={{ color: 'rgb(182 183 184)' }}>{car.description}</p>
       <div className="cars-icons d-flex flex-row">
         <IconContext.Provider value={{ color: '#c3c0c0' }}>

@@ -17,6 +17,9 @@
   box-sizing: content-box;
 }
 
+.link {
+  color: black;
+}
 @media only screen and (max-width: 768px) {
   .car-card {
     height: auto;
@@ -24,10 +27,10 @@
 
   .car-image {
     height: auto;
-    width: 10rem;
+    width: 21rem;
+  }
+  .car-name {
+    font-size: 3rem;
   }
 }
 
-.link {
-  color: black;
-}
