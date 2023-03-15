@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { createCar } from '../../redux/car/car';
 import './addcar.css';
 
@@ -32,6 +33,7 @@ const AddCar = () => {
 
     dispatch(createCar(data)).then(() => {
       gohome();
+      toast.info('Created Car Successfully');
     });
   };
 

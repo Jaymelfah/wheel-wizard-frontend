@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import { getAllCars, deleteCar } from '../../redux/deletecar/deletecar';
 import trashcan from '../../assets/trash.gif';
 import './deletecar.css';
@@ -13,7 +14,9 @@ const RemoveCar = () => {
   const { cars, loading, error } = useSelector((state) => state.delete);
 
   const handledelete = (carId) => {
-    dispatch(deleteCar(carId));
+    dispatch(deleteCar(carId)).then(() => {
+      toast.info('Deleted Car Successfully');
+    });
   };
 
   const deletecar = (id) => {

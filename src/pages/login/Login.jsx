@@ -4,8 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import { useDispatch } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 import { login } from '../../redux/auth/auth';
 
 const LoginForm = () => {
@@ -55,7 +54,6 @@ const LoginForm = () => {
             Sign up
           </Button>
         </div>
-        <ToastContainer style={{ width: '320px' }} theme="colored" />
       </Form>
     </div>
   );
