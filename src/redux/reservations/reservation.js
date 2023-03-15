@@ -60,9 +60,7 @@ export const ReservationSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchReservations.fulfilled, (state, action) => action.payload)
-      .addCase(addReservation.fulfilled, (state, action) => ({
-        reservations: [...state.reservations, action.payload],
-      }))
+      .addCase(addReservation.fulfilled, (state, action) => [...state, action.payload])
       .addCase(deleteReservation.fulfilled, (state, action) => [
         ...state.filter(
           (reservation) => reservation.id !== action.payload.id,
