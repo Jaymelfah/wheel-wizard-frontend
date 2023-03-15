@@ -4,25 +4,29 @@ import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import { useDispatch, useSelector } from 'react-redux';
 import { signup } from '../../redux/auth/auth';
+import loader from '../../assets/loader2.gif';
 
 const SignupForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const success = useSelector((state) => state.auth.success);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
     const reqBody = {
       name,
       email,
       password,
       password_confirmation: confirmPassword,
     };
-    dispatch(signup(reqBody));
+    await dispatch(signup(reqBody));
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -73,7 +77,7 @@ const SignupForm = () => {
           />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Signup
+          {isLoading ? <img src={loader} alt="loading" className="spinner" /> : 'Signup'}
         </Button>
         <div className="d-flex account">
           <p>Already have an account? Click here to Log in</p>

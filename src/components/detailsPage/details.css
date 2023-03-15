@@ -1,68 +1,115 @@
+
 .main-holder {
-  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.rotate-image {
+  transform: scaleX(-1);
+  transition: transform 0.5s ease-in-out;
 }
 
 .details-holder {
-  position: absolute;
-  left: 20%;
-  display: flex;
+  padding: 20px;
   flex-direction: row;
-  align-items: flex-end;
-  margin: 20px;
-  padding: 50px;
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  align-items: center;
 }
 
 .d-car-image {
   width: 100%;
-  max-width: 400px;
+  max-width: 550px;
   height: auto;
-  margin-bottom: 20px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.circle {
+  width: 100%;
+  max-width: 117px;
+  height: auto;
+  margin-top: 20px;
+}
+
+.name {
+  font-size: 24px !important;
+  margin-bottom: 10px;
+  font-weight: bold !important;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rotate-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-top: 70px;
 }
 
 .car-info {
+  margin-left: 5%;
+  flex-grow: 1;
   width: 100%;
-  padding: 20px;
+  box-sizing: unset;
+}
+
+.discover {
+  color: black;
+  font-weight: 800;
+  margin-top: 30px;
+}
+
+.link {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.car-info button {
+  font-size: 23px;
+  margin-top: 50px;
+  border-radius: 30px;
+  float: right;
+  width: 141px;
+}
+
+.car-info ul {
+  list-style: none;
+  width: 100%;
+  padding: 0 !important;
+}
+
+.car-info li {
+  padding: 11px;
+  font-weight: 500;
+  font-size: larger;
+}
+
+.car-info li:nth-child(even) {
   background-color: #f2f2f2;
-  border-radius: 10px;
-  text-align: start;
 }
 
-.details-holder h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+.-info {
+  display: flex;
+  justify-content: space-between;
 }
 
-.details-holder p {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.details-holder button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .details-holder {
-    margin: 20px 20px 20px 0;
-    display: flex;
     flex-direction: column;
   }
 
-  .d-car-image {
-    margin-bottom: 0;
+  .car-info {
+    width: 100%;
+    flex-grow: 1;
   }
 
-  .car-info {
-    margin-left: 20px;
-    text-align: left;
+  .rotate-btn {
+    margin-top: 10px;
   }
 }

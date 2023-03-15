@@ -39,7 +39,7 @@
 }
 
 .images {
-  width: 100px; /* adjust to yosur desired size */
+  width: 100px;
 }
 
 .del-car-image {
@@ -66,8 +66,9 @@
 }
 
 .trash {
-  width: 50px;
-  height: 50px;
+  margin-top: 0.5rem;
+  width: 20px;
+  height: 20px;
 }
 
 @media only screen and (max-width: 768px) {

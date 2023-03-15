@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Table, Button } from 'react-bootstrap';
 import './userReservationTable.css';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import { fetchReservations, deleteReservation } from '../../redux/reservations/reservation';
 import { getCars } from '../../redux/cars/cars';
 import date from '../../assets/date.png';
@@ -42,16 +43,17 @@ const UserReservationTable = () => {
     dispatch(deleteReservation(id));
     handleCloseModal();
     dispatch(fetchReservations());
+    toast.info('Reservation deleted');
   };
 
   return (
-    <>
-      <Table striped bordered hover>
+    <div className="tablecont">
+      <Table striped bordered hover className="table">
         <thead>
           <tr>
             <th>ID</th>
             <th>
-              Car Name
+              Car
               {' '}
               <img src={car} alt="date" className="table-img" />
             </th>
@@ -92,13 +94,13 @@ const UserReservationTable = () => {
                   {' '}
                   hrs
                 </td>
-                <td><Button variant="danger" onClick={() => handleCancelClick(reservation.id)}>Cancel Reservation</Button></td>
+                <td><Button className="table-btn" variant="danger" onClick={() => handleCancelClick(reservation.id)}>Cancel Reservation</Button></td>
               </tr>
             );
           })}
         </tbody>
       </Table>
-    </>
+    </div>
   );
 };
 
