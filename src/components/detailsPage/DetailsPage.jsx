@@ -58,7 +58,7 @@ const DetailsPage = () => {
           </div>
         </section>
       ) : (
-       <img src={loader} alt="loading" />
+       <img className='loading-car' src={loader} alt="loading" />
       )}
       {isModalOpen && (
         <div className="modal">
