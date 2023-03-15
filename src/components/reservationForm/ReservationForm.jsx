@@ -73,6 +73,7 @@ function ReservationForm() {
               menu: (provided) => ({
                 ...provided,
                 zIndex: 100,
+                width: '200px',
               }),
             }}
           />
