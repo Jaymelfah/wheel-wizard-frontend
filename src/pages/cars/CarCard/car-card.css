@@ -1,12 +1,24 @@
 .car-card {
   align-items: center;
   justify-content: flex-end;
-  height: 100%;
+  height: 37rem;
 }
 
 .car-image {
   height: auto;
-  width: 15rem;
+  width: 19rem;
+}
+
+.cars-icons svg {
+  border: 1px solid gray;
+  border-radius: 50%;
+  margin: 0 10px;
+  padding: 6px;
+  box-sizing: content-box;
+}
+
+.link {
+  color: black;
 }
 
 @media only screen and (max-width: 768px) {
@@ -16,10 +28,10 @@
 
   .car-image {
     height: auto;
-    width: 10rem;
+    width: 21rem;
   }
-}
 
-.link {
-  color: black;
+  .car-name {
+    font-size: 3rem;
+  }
 }

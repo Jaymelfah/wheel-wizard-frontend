@@ -1,2 +1,2 @@
-export const URL = 'http://localhost:3000/';
+export const URL = 'https://wheel-wizard.onrender.com';
 export const DB = 'POSTGRESQL';
