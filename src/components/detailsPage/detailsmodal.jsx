@@ -28,16 +28,16 @@ const Modal = ({ selectedCar, setIsModalOpen }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const carId = selectedCar ? selectedCar.id : null;
     const data = {
       reservation_date: reservationDate,
       duration,
-      car_id: selectedCar.id,
+      car_id: carId,
       city: selectedCity.value,
     };
     dispatch(addReservation(data));
-    dispatch(fetchReservations());
+    dispatch(fetchReservations()).then(() => gohome());
     setIsModalOpen(false);
-    gohome();
   };
 
   return (

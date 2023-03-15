@@ -14,7 +14,7 @@ import loader from '../../assets/loader2.gif';
 
 const UserReservationTable = () => {
   const carsData = useSelector((state) => state.cars);
-  const reservations = useSelector((state) => state.reservations);
+  const { reservations, loading, error } = useSelector((state) => state.reservations);
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
 
@@ -40,6 +40,14 @@ const UserReservationTable = () => {
   useEffect(() => {
     dispatch(fetchReservations());
   }, [dispatch]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
     <div className="tablecont">
