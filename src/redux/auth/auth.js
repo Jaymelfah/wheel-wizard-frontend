@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
@@ -27,6 +28,7 @@ export const login = (reqBody) => async (dispatch) => {
 export const logout = () => async (dispatch) => {
   localStorage.removeItem('token');
   dispatch({ type: LOGOUT });
+  toast.success('Logged out successfully');
 };
 
 export const signup = (reqBody) => async (dispatch) => {
