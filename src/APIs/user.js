@@ -15,7 +15,7 @@ export const createAccount = async (reqBody) => {
 
 export const getToken = async (reqBody) => {
   try {
-    const response = await axios.post(`${URL}/users/sign_in`, {
+    const response = await axios.post(`${URL}users/sign_in`, {
       user: reqBody,
     });
     toast.success('Logged in successfully');
