@@ -54,10 +54,10 @@ button[type="submit"]:hover {
 }
 
 
-.css-b62m3t-container {
+/* .css-b62m3t-container {
   align-self: flex-start !important;
   height: 2rem;
-}
+} */
 
 @media (max-width: 768px) {
   form {

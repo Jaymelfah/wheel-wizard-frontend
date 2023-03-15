@@ -74,4 +74,8 @@
   .cars-container .pagination-btn {
     width: 52px;
   }
+
+  .cars-container .pagination-btn {
+    display: none !important;
+  }
 }

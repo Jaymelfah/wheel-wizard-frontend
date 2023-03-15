@@ -48,5 +48,6 @@
 
   .car-name {
     font-size: 3rem;
+    width: 100%;
   }
 }

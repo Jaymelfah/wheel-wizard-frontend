@@ -40,7 +40,7 @@ const CarCarousel = ({ cars }) => {
           <RxIcons.RxTriangleLeft size="3em" />
         </button>
       </div>
-      <Carousel activeIndex={index} onSelect={handleSelect} interval={null} className="w-100" controls={false}>
+      <Carousel activeIndex={index} onSelect={handleSelect} interval={null} className="w-100" controls={false} indicators={true}>
         {cars.map((car, i) => {
             return (
               <Carousel.Item key={i}>
