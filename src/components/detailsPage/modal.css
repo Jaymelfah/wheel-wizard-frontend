@@ -8,7 +8,7 @@ form {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   border-radius: 4px;
-  height: 50%;
+  height: auto;
 }
 
 .note {
@@ -50,6 +50,7 @@ button[type="submit"]:hover {
   }
 
   .modal {
-    width: 50%;
+    width: 100%;
+    margin-top: 70px;
   }
 }
