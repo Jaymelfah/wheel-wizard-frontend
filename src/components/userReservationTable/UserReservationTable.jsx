@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Table, Button } from 'react-bootstrap';
 import './userReservationTable.css';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import { fetchReservations, deleteReservation } from '../../redux/reservations/reservation';
 import { getCars } from '../../redux/cars/cars';
 import date from '../../assets/date.png';
@@ -42,6 +43,7 @@ const UserReservationTable = () => {
     dispatch(deleteReservation(id));
     handleCloseModal();
     dispatch(fetchReservations());
+    toast.info('Reservation deleted');
   };
 
   return (

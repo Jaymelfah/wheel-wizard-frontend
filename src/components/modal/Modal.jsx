@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import './modal.css';
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { getCars } from '../../redux/cars/cars';
 import { addReservation, fetchReservations } from '../../redux/reservations/reservation';
@@ -40,6 +41,7 @@ const Modal = ({ selectedCity, setIsModalOpen }) => {
     dispatch(fetchReservations());
     setIsModalOpen(false);
     gohome();
+    toast.info('Successfully made a reservation');
   };
 
   return (

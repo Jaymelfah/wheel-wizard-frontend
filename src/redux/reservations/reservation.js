@@ -3,9 +3,9 @@ import { URL } from '../../constants';
 
 const BASE_URL = `${URL}/api/v1/reservations`;
 const initialState = [];
-const token = localStorage.getItem('token');
 
 export const fetchReservations = createAsyncThunk('reservations/getData', async () => {
+  const token = localStorage.getItem('token');
   const response = await fetch(BASE_URL, {
     method: 'GET',
     headers: {
@@ -18,6 +18,7 @@ export const fetchReservations = createAsyncThunk('reservations/getData', async 
 });
 
 export const addReservation = createAsyncThunk('reservations/addData', async (payload) => {
+  const token = localStorage.getItem('token');
   const response = await fetch(BASE_URL, {
     method: 'POST',
     body: JSON.stringify({ reservation: payload }),
@@ -30,6 +31,7 @@ export const addReservation = createAsyncThunk('reservations/addData', async (pa
 });
 
 export const deleteReservation = createAsyncThunk('reservations/deleteData', async (id) => {
+  const token = localStorage.getItem('token');
   const remove = await fetch(`${BASE_URL}/${id}`, {
     method: 'DELETE',
     headers: {
