@@ -44,15 +44,19 @@ button[type="submit"]:hover {
   background-color: #3e8e41;
 }
 
-.modal {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+.cls-m-btn {
+  margin: 0;
+  height: 2rem;
+  width: 2rem;
+  font-size: 21px;
+  padding: 0;
+  border-radius: 50%;
 }
 
-.modal-content {
-  margin-top: 30%;
-  padding-bottom: 3rem;
+
+.css-b62m3t-container {
+  align-self: flex-start !important;
+  height: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -72,12 +76,8 @@ button[type="submit"]:hover {
     justify-content: center;
   }
 
-  .cls-m-btn {
-    margin: 0;
-    height: 2rem;
-    width: 2rem;
-    font-size: 21px;
-    padding: 0;
-    border-radius: 50%;
+  .modal-content {
+    margin-top: -30%;
+    padding-bottom: 3rem;
   }
 }

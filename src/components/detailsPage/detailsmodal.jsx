@@ -62,10 +62,11 @@ const Modal = ({ selectedCar, setIsModalOpen }) => {
             ...provided,
             borderRadius: '25px',
             height: '2.7rem',
-            background: '#a2d31a',
+            background: '#c2d6ae',
             border: '1px solid white',
             width: '10.2rem',
             color: 'white',
+            alignSelf: 'flex-start',
           }),
         }}
       />

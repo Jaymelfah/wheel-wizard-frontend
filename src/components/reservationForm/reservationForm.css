@@ -11,7 +11,7 @@
 }
 
 .container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -86,8 +86,14 @@ button {
   color: #a2d31a;
 }
 
-.select {
+#carName {
+  height: 2rem;
+  border: none;
   width: 10rem;
+  background-color: #c2d6ae;
+  align-self: flex-start;
+  border-radius: 5rem;
+  padding: 0px 9px;
 }
 
 .cls-m-btn {
@@ -99,10 +105,6 @@ button {
 button:hover {
   background-color: #0c7cd5;
 }
-
-/* .css-qbdosj-Input {
-  color: white;
-} */
 
 .divider {
   width: 100%;
@@ -129,7 +131,6 @@ button:hover {
   padding: 20px;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  text-align: center;
 }
 
 .modal h2 {
