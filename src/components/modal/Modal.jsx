@@ -8,11 +8,13 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { getCars } from '../../redux/cars/cars';
 import { addReservation, fetchReservations } from '../../redux/reservations/reservation';
+import loader from '../../assets/loader2.gif';
 
-const Modal = ({ selectedCity, setIsModalOpen }) => {
+const Modal = ({ selectedCity }) => {
   const [carName, setCarName] = useState('');
   const [duration, setDuration] = useState('');
   const [reservationDate, setReservationDate] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const carsData = useSelector((state) => state.cars);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -29,6 +31,7 @@ const Modal = ({ selectedCity, setIsModalOpen }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true);
     const selectedCar = cars.find((car) => car.car_name === carName);
     const carId = selectedCar ? selectedCar.id : null;
     const data = {
@@ -37,10 +40,12 @@ const Modal = ({ selectedCity, setIsModalOpen }) => {
       car_id: carId,
       city: selectedCity,
     };
-    dispatch(addReservation(data));
-    dispatch(fetchReservations()).then(() => gohome());
-    setIsModalOpen(false);
-    toast.info('Successfully made a reservation');
+    dispatch(addReservation(data)).then(() => {
+      console.log('hellooooo');
+      toast.info('Successfully made a reservation');
+      dispatch(fetchReservations()).then(() => gohome());
+      setIsLoading(false);
+    });
   };
 
   return (
@@ -73,7 +78,7 @@ const Modal = ({ selectedCity, setIsModalOpen }) => {
         onChange={(e) => setReservationDate(e.target.value)}
       />
 
-      <button type="submit">Book Reservation</button>
+      <button type="submit">{isLoading ? <img src={loader} alt="loading" className="spinner" /> : 'Book Reservation'}</button>
     </form>
   );
 };

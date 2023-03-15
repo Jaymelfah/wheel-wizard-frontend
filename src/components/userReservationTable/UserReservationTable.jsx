@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table, Button } from 'react-bootstrap';
 import './userReservationTable.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,10 +10,12 @@ import city from '../../assets/city.png';
 import car from '../../assets/car.png';
 import del from '../../assets/del.png';
 import time from '../../assets/time.png';
+import loader from '../../assets/loader2.gif';
 
 const UserReservationTable = () => {
   const carsData = useSelector((state) => state.cars);
   const reservations = useSelector((state) => state.reservations);
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
 
   const cars = carsData.map((car) => ({
@@ -27,14 +29,17 @@ const UserReservationTable = () => {
   }, []);
 
   const handleCancelClick = (id) => {
-    dispatch(deleteReservation(id));
-    dispatch(fetchReservations());
-    toast.info('Reservation deleted');
+    setIsLoading(true);
+    dispatch(deleteReservation(id)).then(() => {
+      toast.info('Reservation deleted');
+      dispatch(fetchReservations());
+      setIsLoading(false);
+    });
   };
 
   useEffect(() => {
     dispatch(fetchReservations());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="tablecont">
@@ -71,7 +76,6 @@ const UserReservationTable = () => {
         </thead>
         <tbody>
           {reservations.map((reservation) => {
-            console.log('here is the reservations', reservations);
             const car = cars.find((car) => car.id === reservation.car_id);
             const carName = car ? car.car_name : 'Unknown Car';
             return (
@@ -85,7 +89,7 @@ const UserReservationTable = () => {
                   {' '}
                   hrs
                 </td>
-                <td><Button className="table-btn" variant="danger" onClick={() => handleCancelClick(reservation.id)}>Cancel Reservation</Button></td>
+                <td><Button className="table-btn" variant="danger" onClick={() => handleCancelClick(reservation.id)}>{isLoading ? <img src={loader} alt="loading" className="spinner" /> : 'Cancel Reservation'}</Button></td>
               </tr>
             );
           })}

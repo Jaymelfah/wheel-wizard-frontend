@@ -31,7 +31,8 @@ export const addReservation = createAsyncThunk(
         Authorization: `Bearer ${token}`,
       },
     });
-    await response.text();
+    console.log('here is addreservation action');
+    return response;
   },
 );
 
@@ -46,7 +47,7 @@ export const deleteReservation = createAsyncThunk(
         Authorization: `Bearer ${token}`,
       },
     });
-    await remove.text();
+    return remove.text();
   },
 );
 
