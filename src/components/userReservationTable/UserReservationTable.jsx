@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Table, Button } from 'react-bootstrap';
 import './userReservationTable.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +12,6 @@ import del from '../../assets/del.png';
 import time from '../../assets/time.png';
 
 const UserReservationTable = () => {
-  const [selectedReservation, setSelectedReservation] = useState(null);
   const carsData = useSelector((state) => state.cars);
   const reservations = useSelector((state) => state.reservations);
   const dispatch = useDispatch();
@@ -25,26 +24,17 @@ const UserReservationTable = () => {
   useEffect(() => {
     dispatch(getCars());
     dispatch(fetchReservations());
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(fetchReservations());
-  }, [selectedReservation, dispatch]);
-
-  const handleReservationClick = (reservation) => {
-    setSelectedReservation(reservation);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedReservation(null);
-  };
+  }, []);
 
   const handleCancelClick = (id) => {
     dispatch(deleteReservation(id));
-    handleCloseModal();
     dispatch(fetchReservations());
     toast.info('Reservation deleted');
   };
+
+  useEffect(() => {
+    dispatch(fetchReservations());
+  }, []);
 
   return (
     <div className="tablecont">
@@ -81,10 +71,11 @@ const UserReservationTable = () => {
         </thead>
         <tbody>
           {reservations.map((reservation) => {
+            console.log('here is the reservations', reservations);
             const car = cars.find((car) => car.id === reservation.car_id);
             const carName = car ? car.car_name : 'Unknown Car';
             return (
-              <tr key={reservation.id} onClick={() => handleReservationClick(reservation)}>
+              <tr key={reservation.id}>
                 <td>{reservation.id}</td>
                 <td>{carName}</td>
                 <td>{reservation.city}</td>

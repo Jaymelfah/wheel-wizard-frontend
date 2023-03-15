@@ -38,9 +38,8 @@ const Modal = ({ selectedCity, setIsModalOpen }) => {
       city: selectedCity,
     };
     dispatch(addReservation(data));
-    dispatch(fetchReservations());
+    dispatch(fetchReservations()).then(() => gohome());
     setIsModalOpen(false);
-    gohome();
     toast.info('Successfully made a reservation');
   };
 
