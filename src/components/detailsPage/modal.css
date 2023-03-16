@@ -55,7 +55,7 @@ button[type="submit"]:hover {
 
 #select-city {
   align-self: flex-start;
-  margin: 2rem 0rem;
+  margin: 2rem 0;
 }
 
 @media (max-width: 768px) {

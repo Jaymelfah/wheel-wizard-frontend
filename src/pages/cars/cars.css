@@ -62,10 +62,10 @@
 }
 
 .user-name {
-    align-self: flex-end;
-    padding-right: 3rem;
-    font-size: 1.5rem;
-    color: #98c10f;
+  align-self: flex-end;
+  padding-right: 3rem;
+  font-size: 1.5rem;
+  color: #98c10f;
 }
 
 @media only screen and (max-width: 768px) {
