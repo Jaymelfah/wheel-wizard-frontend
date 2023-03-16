@@ -19,7 +19,7 @@ export const getToken = async (reqBody) => {
       user: reqBody,
     });
     toast.success('Logged in successfully');
-    return response.data.token;
+    return response.data;
   } catch (error) {
     if (error.response.status === 401) {
       toast.error('Invalid email or password');

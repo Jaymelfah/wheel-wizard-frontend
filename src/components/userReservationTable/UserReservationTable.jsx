@@ -3,7 +3,10 @@ import { Table, Button } from 'react-bootstrap';
 import './userReservationTable.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { fetchReservations, deleteReservation } from '../../redux/reservations/reservation';
+import {
+  fetchReservations,
+  deleteReservation,
+} from '../../redux/reservations/reservation';
 import { getCars } from '../../redux/cars/cars';
 import date from '../../assets/date.png';
 import city from '../../assets/city.png';
@@ -15,7 +18,9 @@ import loaders from '../../assets/loader.gif';
 
 const UserReservationTable = () => {
   const carsData = useSelector((state) => state.cars);
-  const { reservations, loading, error } = useSelector((state) => state.reservations);
+  const { reservations, loading, error } = useSelector(
+    (state) => state.reservations,
+  );
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
 
@@ -44,7 +49,10 @@ const UserReservationTable = () => {
 
   if (loading) {
     return (
-      <div className="center"><img className="loading-cars" src={loaders} alt="loading" /></div>);
+      <div className="center">
+        <img className="loading-cars" src={loaders} alt="loading" />
+      </div>
+    );
   }
 
   if (error) {
@@ -53,58 +61,73 @@ const UserReservationTable = () => {
 
   return (
     <div className="tablecont">
-      <Table striped bordered hover className="table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>
-              Car
-              {' '}
-              <img src={car} alt="date" className="table-img" />
-            </th>
-            <th>
-              City
-              {' '}
-              <img src={city} alt="city" className="table-img" />
-            </th>
-            <th>
-              Date
-              {' '}
-              <img src={date} alt="date" className="table-img" />
-            </th>
-            <th>
-              Duration
-              {' '}
-              <img src={time} alt="time" className="table-img" />
-            </th>
-            <th>
-              Delete
-              {' '}
-              <img src={del} alt="delete" className="table-img" />
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {reservations.map((reservation) => {
-            const car = cars.find((car) => car.id === reservation.car_id);
-            const carName = car ? car.car_name : 'Unknown Car';
-            return (
-              <tr key={reservation.id}>
-                <td>{reservation.id}</td>
-                <td>{carName}</td>
-                <td>{reservation.city}</td>
-                <td>{reservation.reservation_date}</td>
-                <td>
-                  {reservation.duration}
-                  {' '}
-                  hrs
-                </td>
-                <td><Button className="table-btn" variant="danger" onClick={() => handleCancelClick(reservation.id)}>{isLoading ? <img src={loader} alt="loading" className="spinner" /> : 'Cancel Reservation'}</Button></td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </Table>
+      {reservations.length === 0 && <div className="no-reservations">No reservations added yet</div>}
+      {reservations.length > 0 && (
+        <Table striped bordered hover className="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>
+                Car
+                {' '}
+                <img src={car} alt="date" className="table-img" />
+              </th>
+              <th>
+                City
+                {' '}
+                <img src={city} alt="city" className="table-img" />
+              </th>
+              <th>
+                Date
+                {' '}
+                <img src={date} alt="date" className="table-img" />
+              </th>
+              <th>
+                Duration
+                {' '}
+                <img src={time} alt="time" className="table-img" />
+              </th>
+              <th>
+                Delete
+                {' '}
+                <img src={del} alt="delete" className="table-img" />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {reservations.map((reservation) => {
+              const car = cars.find((car) => car.id === reservation.car_id);
+              const carName = car ? car.car_name : 'Unknown Car';
+              return (
+                <tr key={reservation.id}>
+                  <td>{reservation.id}</td>
+                  <td>{carName}</td>
+                  <td>{reservation.city}</td>
+                  <td>{reservation.reservation_date}</td>
+                  <td>
+                    {reservation.duration}
+                    {' '}
+                    hrs
+                  </td>
+                  <td>
+                    <Button
+                      className="table-btn"
+                      variant="danger"
+                      onClick={() => handleCancelClick(reservation.id)}
+                    >
+                      {isLoading ? (
+                        <img src={loader} alt="loading" className="spinner" />
+                      ) : (
+                        'Cancel Reservation'
+                      )}
+                    </Button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+      )}
     </div>
   );
 };

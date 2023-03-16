@@ -8,6 +8,11 @@ Object {
       <div
         class="d-flex flex-column align-items-center justify-content-center w-100 overflow-hidden"
       >
+        <h4
+          class="user-name"
+        >
+          Welcome, null
+        </h4>
         <h2
           class="cars-section-title"
         >
@@ -87,6 +92,11 @@ Object {
     <div
       class="d-flex flex-column align-items-center justify-content-center w-100 overflow-hidden"
     >
+      <h4
+        class="user-name"
+      >
+        Welcome, null
+      </h4>
       <h2
         class="cars-section-title"
       >
