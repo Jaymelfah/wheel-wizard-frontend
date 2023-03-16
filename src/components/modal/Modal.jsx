@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -7,7 +5,10 @@ import './modal.css';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { getCars } from '../../redux/cars/cars';
-import { addReservation, fetchReservations } from '../../redux/reservations/reservation';
+import {
+  addReservation,
+  fetchReservations,
+} from '../../redux/reservations/reservation';
 import loader from '../../assets/loader2.gif';
 
 const Modal = ({ selectedCity }) => {
@@ -54,44 +55,61 @@ const Modal = ({ selectedCity }) => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-    >
+    <form onSubmit={handleSubmit}>
       <h3>Fill the fieds below</h3>
 
-      <label htmlFor="carName">Car Name:</label>
-      <select id="carName" value={carName} onChange={(e) => setCarName(e.target.value)} required>
-        <option value="">Select a car</option>
-        {cars.map((car) => (
-          <option key={car.id} value={car.car_name}>{car.car_name}</option>
-        ))}
-      </select>
+      <label htmlFor="carName">
+        Car Name:
+        <select
+          id="carName"
+          value={carName}
+          onChange={(e) => setCarName(e.target.value)}
+          required
+        >
+          <option value="">Select a car</option>
+          {cars.map((car) => (
+            <option key={car.id} value={car.car_name}>
+              {car.car_name}
+            </option>
+          ))}
+        </select>
+      </label>
 
-      <label htmlFor="duration">Duration:</label>
-      <input
-        type="number"
-        id="duration"
-        value={duration}
-        onChange={(e) => setDuration(e.target.value)}
-        required
-      />
+      <label htmlFor="duration">
+        Duration:
+        <input
+          type="number"
+          id="duration"
+          value={duration}
+          onChange={(e) => setDuration(e.target.value)}
+          required
+        />
+      </label>
 
-      <label htmlFor="reservationDate">Reservation Date:</label>
-      <input
-        type="date"
-        id="reservationDate"
-        value={reservationDate}
-        onChange={(e) => setReservationDate(e.target.value)}
-        required
-      />
+      <label htmlFor="reservationDate">
+        Reservation Date:
+        <input
+          type="date"
+          id="reservationDate"
+          value={reservationDate}
+          onChange={(e) => setReservationDate(e.target.value)}
+          required
+        />
+      </label>
 
-      <button type="submit">{isLoading ? <img src={loader} alt="loading" className="spinner" /> : 'Book Reservation'}</button>
+      <button type="submit">
+        {isLoading ? (
+          <img src={loader} alt="loading" className="spinner" />
+        ) : (
+          'Book Reservation'
+        )}
+      </button>
     </form>
   );
 };
 
-Modal.propTypes = ({
+Modal.propTypes = {
   selectedCity: PropTypes.string,
-}).isRequired;
+}.isRequired;
 
 export default Modal;

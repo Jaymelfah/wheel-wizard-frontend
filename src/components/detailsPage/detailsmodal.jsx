@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Select from 'react-select';
@@ -7,7 +5,10 @@ import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import './modal.css';
 import { useNavigate } from 'react-router-dom';
-import { addReservation, fetchReservations } from '../../redux/reservations/reservation';
+import {
+  addReservation,
+  fetchReservations,
+} from '../../redux/reservations/reservation';
 import loader from '../../assets/loader2.gif';
 
 const cities = [
@@ -54,17 +55,25 @@ const Modal = ({ selectedCar, setIsModalOpen }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
+    <form
+      onSubmit={handleSubmit}
+      style={{ display: 'flex', flexDirection: 'column' }}
+    >
       <h3>Fill the fields below</h3>
 
-      <label htmlFor="carName">Car Name:</label>
-      <select id="carName">
-        <option key={selectedCar.id} value={selectedCar.name}>{selectedCar.name}</option>
-      </select>
+      <label htmlFor="carName" className="d-flex flex-column">
+        Car Name:
+        <select id="carName">
+          <option key={selectedCar.id} value={selectedCar.name}>
+            {selectedCar.name}
+          </option>
+        </select>
+      </label>
 
-      <label htmlFor="select_city">Select a city:</label>
       <Select
+        id="select-city"
         aria-labelledby="select_city"
+        placeholder="Select a city"
         className="select"
         options={cities}
         required
@@ -84,82 +93,41 @@ const Modal = ({ selectedCar, setIsModalOpen }) => {
         }}
       />
 
-      <label htmlFor="duration">Duration:</label>
-      <input
-        required
-        type="number"
-        id="duration"
-        value={duration}
-        onChange={(e) => setDuration(e.target.value)}
-      />
+      <label htmlFor="duration">
+        Duration:
+        <input
+          required
+          type="number"
+          id="duration"
+          value={duration}
+          onChange={(e) => setDuration(e.target.value)}
+        />
+      </label>
 
-      <label htmlFor="reservationDate">Reservation Date:</label>
-      <input
-        type="date"
-        required
-        id="reservationDate"
-        value={reservationDate}
-        onChange={(e) => setReservationDate(e.target.value)}
-      />
+      <label htmlFor="reservationDate">
+        Reservation Date:
+        <input
+          type="date"
+          required
+          id="reservationDate"
+          value={reservationDate}
+          onChange={(e) => setReservationDate(e.target.value)}
+        />
+      </label>
 
-      <button type="submit">{isLoading ? <img src={loader} alt="loading" className="spinner" /> : 'Book Reservation'}</button>
-
-      <style>
-        {`
-    form {
-      padding: 0 1rem;
-      font-size: 1rem;
-    }
-
-    label {
-      margin-top: 1rem;
-      font-size: 0.8rem;
-    }
-
-    input,
-    select {
-      margin-top: 0.5rem;
-      font-size: 1rem;
-      padding: 0.5rem;
-    }
-
-    button {
-      margin-top: 1rem;
-      font-size: 1rem;
-      padding: 0.5rem;
-    }
-
-    @media screen and (min-width: 768px) {
-      form {
-        font-size: 1.2rem;
-      }
-
-      label {
-        margin-top: 1.5rem;
-        font-size: 1rem;
-      }
-
-      input,
-      select {
-        margin-top: 1rem;
-        font-size: 1.2rem;
-        padding: 0.7rem;
-      }
-
-      button {
-        margin-top: 1.5rem;
-        font-size: 1.2rem;
-        padding: 0.7rem;
-      }
-    }
-  `}
-      </style>
+      <button type="submit">
+        {isLoading ? (
+          <img src={loader} alt="loading" className="spinner" />
+        ) : (
+          'Book Reservation'
+        )}
+      </button>
     </form>
   );
 };
 
-Modal.propTypes = ({
+Modal.propTypes = {
   selectedCity: PropTypes.string,
-}).isRequired;
+}.isRequired;
 
 export default Modal;

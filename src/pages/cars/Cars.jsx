@@ -1,7 +1,5 @@
-/* eslint-disable */
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import * as RxIcons from 'react-icons/rx';
 import { getCars } from '../../redux/cars/cars';
 import './cars.css';
 import CarCarousel from '../../components/carousel/CarCarousel';

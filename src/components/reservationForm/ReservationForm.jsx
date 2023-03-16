@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import Select from 'react-select';
 import Modal from '../modal/Modal';
 import './reservationForm.css';
