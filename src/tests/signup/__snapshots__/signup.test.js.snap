@@ -5,22 +5,108 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <div
+        class="form-cont"
+      >
+        <form
+          class="login-form"
+        >
+          <h1
+            class="sidebar-title-signup pt-3 ml-5"
+          >
+            WheelWizard
+          </h1>
+          <div
+            class="mb-3"
+          >
+            <input
+              class="form-control"
+              id="formBasicName"
+              placeholder="Enter your name"
+              required=""
+              type="name"
+              value=""
+            />
+          </div>
+          <div
+            class="mb-3"
+          >
+            <input
+              class="form-control"
+              id="formBasicEmail"
+              placeholder="Enter email"
+              required=""
+              type="email"
+              value=""
+            />
+          </div>
+          <div
+            class="mb-3"
+          >
+            <input
+              class="form-control"
+              id="formBasicPassword"
+              placeholder="Password"
+              required=""
+              type="password"
+              value=""
+            />
+          </div>
+          <div
+            class="mb-3"
+          >
+            <input
+              class="form-control"
+              id="formConfirmPassword"
+              placeholder="Password Confirmation"
+              required=""
+              type="password"
+              value=""
+            />
+          </div>
+          <button
+            class="btn btn-primary"
+            type="submit"
+          >
+            Signup
+          </button>
+          <div
+            class="d-flex account"
+          >
+            <p>
+              Already have an account? Click here to Log in
+            </p>
+            <button
+              class="btn plain-btn btn btn-white"
+              type="button"
+            >
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="form-cont"
+    >
       <form
         class="login-form"
       >
+        <h1
+          class="sidebar-title-signup pt-3 ml-5"
+        >
+          WheelWizard
+        </h1>
         <div
           class="mb-3"
         >
-          <label
-            class="form-label"
-            for="formBasicName"
-          >
-            Name
-          </label>
           <input
             class="form-control"
             id="formBasicName"
             placeholder="Enter your name"
+            required=""
             type="name"
             value=""
           />
@@ -28,16 +114,11 @@ Object {
         <div
           class="mb-3"
         >
-          <label
-            class="form-label"
-            for="formBasicEmail"
-          >
-            Email address
-          </label>
           <input
             class="form-control"
             id="formBasicEmail"
             placeholder="Enter email"
+            required=""
             type="email"
             value=""
           />
@@ -45,16 +126,11 @@ Object {
         <div
           class="mb-3"
         >
-          <label
-            class="form-label"
-            for="formBasicPassword"
-          >
-            Password
-          </label>
           <input
             class="form-control"
             id="formBasicPassword"
             placeholder="Password"
+            required=""
             type="password"
             value=""
           />
@@ -62,16 +138,11 @@ Object {
         <div
           class="mb-3"
         >
-          <label
-            class="form-label"
-            for="formConfirmPassword"
-          >
-            Confirm your Password
-          </label>
           <input
             class="form-control"
             id="formConfirmPassword"
             placeholder="Password Confirmation"
+            required=""
             type="password"
             value=""
           />
@@ -82,100 +153,21 @@ Object {
         >
           Signup
         </button>
-        <button
-          class="btn plain-btn btn btn-white"
-          type="button"
+        <div
+          class="d-flex account"
         >
-          login
-        </button>
+          <p>
+            Already have an account? Click here to Log in
+          </p>
+          <button
+            class="btn plain-btn btn btn-white"
+            type="button"
+          >
+            Login
+          </button>
+        </div>
       </form>
     </div>
-  </body>,
-  "container": <div>
-    <form
-      class="login-form"
-    >
-      <div
-        class="mb-3"
-      >
-        <label
-          class="form-label"
-          for="formBasicName"
-        >
-          Name
-        </label>
-        <input
-          class="form-control"
-          id="formBasicName"
-          placeholder="Enter your name"
-          type="name"
-          value=""
-        />
-      </div>
-      <div
-        class="mb-3"
-      >
-        <label
-          class="form-label"
-          for="formBasicEmail"
-        >
-          Email address
-        </label>
-        <input
-          class="form-control"
-          id="formBasicEmail"
-          placeholder="Enter email"
-          type="email"
-          value=""
-        />
-      </div>
-      <div
-        class="mb-3"
-      >
-        <label
-          class="form-label"
-          for="formBasicPassword"
-        >
-          Password
-        </label>
-        <input
-          class="form-control"
-          id="formBasicPassword"
-          placeholder="Password"
-          type="password"
-          value=""
-        />
-      </div>
-      <div
-        class="mb-3"
-      >
-        <label
-          class="form-label"
-          for="formConfirmPassword"
-        >
-          Confirm your Password
-        </label>
-        <input
-          class="form-control"
-          id="formConfirmPassword"
-          placeholder="Password Confirmation"
-          type="password"
-          value=""
-        />
-      </div>
-      <button
-        class="btn btn-primary"
-        type="submit"
-      >
-        Signup
-      </button>
-      <button
-        class="btn plain-btn btn btn-white"
-        type="button"
-      >
-        login
-      </button>
-    </form>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

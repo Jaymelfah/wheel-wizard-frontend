@@ -8,9 +8,11 @@ Object {
       <div
         class="main-holder"
       >
-        <p>
-          Loading...
-        </p>
+        <img
+          alt="loading"
+          class="loading-car"
+          src="loader.gif"
+        />
       </div>
     </div>
   </body>,
@@ -18,9 +20,11 @@ Object {
     <div
       class="main-holder"
     >
-      <p>
-        Loading...
-      </p>
+      <img
+        alt="loading"
+        class="loading-car"
+        src="loader.gif"
+      />
     </div>
   </div>,
   "debug": [Function],

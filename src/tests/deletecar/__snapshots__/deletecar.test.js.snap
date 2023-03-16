@@ -5,14 +5,26 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div>
-        Loading...
+      <div
+        class="center"
+      >
+        <img
+          alt="loading"
+          class="loading-cars"
+          src="loader.gif"
+        />
       </div>
     </div>
   </body>,
   "container": <div>
-    <div>
-      Loading...
+    <div
+      class="center"
+    >
+      <img
+        alt="loading"
+        class="loading-cars"
+        src="loader.gif"
+      />
     </div>
   </div>,
   "debug": [Function],

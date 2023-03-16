@@ -5,22 +5,84 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <div
+        class="form-cont"
+      >
+        <form
+          class="login-form"
+        >
+          <h1
+            class="sidebar-title-signup pt-3 ml-5"
+          >
+            WheelWizard
+          </h1>
+          <div
+            class="mb-3"
+          >
+            <input
+              class="form-control"
+              id="formBasicEmail"
+              placeholder="Enter email"
+              required=""
+              type="email"
+              value=""
+            />
+          </div>
+          <div
+            class="mb-3"
+          >
+            <input
+              class="form-control"
+              id="formBasicPassword"
+              placeholder="Password"
+              required=""
+              type="password"
+              value=""
+            />
+          </div>
+          <button
+            class="btn btn-primary"
+            type="submit"
+          >
+            Login
+          </button>
+          <div
+            class="d-flex account"
+          >
+            <p>
+              No account yet? Click here to Sign Up
+            </p>
+            <button
+              class="btn plain-btn btn btn-white"
+              type="button"
+            >
+              Sign up
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="form-cont"
+    >
       <form
         class="login-form"
       >
+        <h1
+          class="sidebar-title-signup pt-3 ml-5"
+        >
+          WheelWizard
+        </h1>
         <div
           class="mb-3"
         >
-          <label
-            class="form-label"
-            for="formBasicEmail"
-          >
-            Email address
-          </label>
           <input
             class="form-control"
             id="formBasicEmail"
             placeholder="Enter email"
+            required=""
             type="email"
             value=""
           />
@@ -28,16 +90,11 @@ Object {
         <div
           class="mb-3"
         >
-          <label
-            class="form-label"
-            for="formBasicPassword"
-          >
-            Password
-          </label>
           <input
             class="form-control"
             id="formBasicPassword"
             placeholder="Password"
+            required=""
             type="password"
             value=""
           />
@@ -48,66 +105,21 @@ Object {
         >
           Login
         </button>
-        <button
-          class="btn plain-btn btn btn-white"
-          type="button"
+        <div
+          class="d-flex account"
         >
-          Sign up
-        </button>
+          <p>
+            No account yet? Click here to Sign Up
+          </p>
+          <button
+            class="btn plain-btn btn btn-white"
+            type="button"
+          >
+            Sign up
+          </button>
+        </div>
       </form>
     </div>
-  </body>,
-  "container": <div>
-    <form
-      class="login-form"
-    >
-      <div
-        class="mb-3"
-      >
-        <label
-          class="form-label"
-          for="formBasicEmail"
-        >
-          Email address
-        </label>
-        <input
-          class="form-control"
-          id="formBasicEmail"
-          placeholder="Enter email"
-          type="email"
-          value=""
-        />
-      </div>
-      <div
-        class="mb-3"
-      >
-        <label
-          class="form-label"
-          for="formBasicPassword"
-        >
-          Password
-        </label>
-        <input
-          class="form-control"
-          id="formBasicPassword"
-          placeholder="Password"
-          type="password"
-          value=""
-        />
-      </div>
-      <button
-        class="btn btn-primary"
-        type="submit"
-      >
-        Login
-      </button>
-      <button
-        class="btn plain-btn btn btn-white"
-        type="button"
-      >
-        Sign up
-      </button>
-    </form>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
