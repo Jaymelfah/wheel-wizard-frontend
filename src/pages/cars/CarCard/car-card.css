@@ -21,6 +21,21 @@
   color: black;
 }
 
+.back-for-cars {
+  position: absolute;
+  height: 18rem;
+  width: 19rem;
+  z-index: -111111111;
+  top: 11%;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.carload {
+  height: 18rem;
+  width: 19rem;
+}
+
 @media only screen and (max-width: 768px) {
   .car-card {
     height: auto;
@@ -33,5 +48,6 @@
 
   .car-name {
     font-size: 3rem;
+    width: 100%;
   }
 }

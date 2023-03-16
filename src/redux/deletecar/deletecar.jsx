@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable import/no-extraneous-dependencies */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import getCarsFromDB from '../../APIs/cars';
@@ -31,33 +29,41 @@ const deleteCarSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getAllCars.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(getAllCars.fulfilled, (state, action) => {
-        state.cars = action.payload;
-        state.loading = false;
-        state.error = null;
-      })
-      .addCase(getAllCars.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
-      })
-      .addCase(deleteCar.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
+      .addCase(getAllCars.pending, (state) => ({
+        ...state,
+        loading: true,
+        error: null,
+      }))
+      .addCase(getAllCars.fulfilled, (state, action) => ({
+        ...state,
+        cars: action.payload,
+        loading: false,
+        error: null,
+      }))
+      .addCase(getAllCars.rejected, (state, action) => ({
+        ...state,
+        loading: false,
+        error: action.error.message,
+      }))
+      .addCase(deleteCar.pending, (state) => ({
+        ...state,
+        loading: true,
+        error: null,
+      }))
       .addCase(deleteCar.fulfilled, (state, action) => {
         const filteredCars = state.cars.filter((car) => car.id !== action.payload.id);
-        state.cars = filteredCars;
-        state.loading = false;
-        state.error = null;
+        return {
+          ...state,
+          cars: filteredCars,
+          loading: false,
+          error: null,
+        };
       })
-      .addCase(deleteCar.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
-      });
+      .addCase(deleteCar.rejected, (state, action) => ({
+        ...state,
+        loading: false,
+        error: action.error.message,
+      }));
   },
 });
 

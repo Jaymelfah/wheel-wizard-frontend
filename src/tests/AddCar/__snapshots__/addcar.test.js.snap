@@ -115,7 +115,7 @@ Object {
             class="btn btn-primary mb-3"
             type="submit"
           >
-            Add
+            Add Car
           </button>
         </form>
       </div>
@@ -232,7 +232,7 @@ Object {
           class="btn btn-primary mb-3"
           type="submit"
         >
-          Add
+          Add Car
         </button>
       </form>
     </div>

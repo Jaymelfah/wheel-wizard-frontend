@@ -24,22 +24,27 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [Wheel-Wizard] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
-
-**[your_project__name]** is a...
+**[Wheel-Wizard]** is a Final Capstone Project based on an app to book an appointment to try a car. This app is both mobile and desktop responsive. The app allow users to sign_up, login, book an appointment by reservation, can check appointment and cancel appointment, and logout as well.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> This is a Final Capstone Project based on an app to book an appointment to try a car. This app is both mobile and desktop responsive. The app allow users to sign_up, login, book an appointment by reservation, can check appointment and cancel appointment, and logout as well.
-
 <details>
   <summary>Client</summary>
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://reactjs.org/">Redux</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>Backend</summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/">Ruby on Rails</a></li>
+    <li><a href="https://github.com/Jaymelfah/wheel-wizard-api.git">Backend Repository</a></li>
   </ul>
 </details>
 
@@ -54,20 +59,18 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
-- **[User_SignUp]**
+- **[Authentication_cycle(SignUp-Login-logout)]**
 - **[Reservation]**
+- **[APIs]**
 - **[Add_Cars]**
+- **[Show_Cars]**
+- **[Delete_Cars]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-
-
-> Add a link to your deployed project.
 
 - [Live Demo Link](https://google.com)
 
@@ -77,18 +80,15 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
-
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
 
-```sh
- gem install rails
-```
-
+- Node js
+- React js
+- Npm packages 
 
 ### Setup
 
@@ -105,14 +105,14 @@ Install this project with:
 
 ```sh
   cd wheel-wizard-frontend
-  gem install
+  npm install
 ```
 ### Usage
 
 To run the project, execute the following command:
 
 ```sh
-  rails server
+  npm start
 ```
 
 ### Run tests
@@ -120,20 +120,8 @@ To run the project, execute the following command:
 To run tests, run the following command:
 
 ```sh
-  bin/rails test test/models/article_test.rb
+  npm run test
 ```
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -149,7 +137,7 @@ Example:
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/jeremiah-melfah)
 
-👤 **Kareem Willson**
+👤 **Kareem Wilson**
 
 - GitHub: [@githubhandle](https://github.com/KareemWilson)
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
@@ -175,11 +163,8 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[SignUp]**
-- [ ] **[Reservation]**
-- [ ] **[APIs]**
+- [ ] **[Dockerization]**
+- [ ] **[MobileApp]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -197,9 +182,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project, just hit a star button
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -207,13 +190,9 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
 - Hat tip to anyone whose code was used
 - Thanks to Microverse for providing this platform.
 - Original design idea by Murat Korkmaz in Behance. Thank you
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -222,7 +201,5 @@ If you like this project...
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

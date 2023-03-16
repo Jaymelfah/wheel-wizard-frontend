@@ -1,10 +1,10 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { createCar } from '../../redux/car/car';
 import './addcar.css';
+import loader from '../../assets/loader2.gif';
 
 const AddCar = () => {
   const [carData, setCarData] = useState({
@@ -16,12 +16,19 @@ const AddCar = () => {
     model: '',
     year: '',
   });
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const gohome = () => navigate('/');
   const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsLoading(true);
+    if (!carData.image) {
+      toast.error('Please select an image for the car');
+      setIsLoading(false);
+      return;
+    }
     const data = new FormData();
     data.append('car[name]', carData.name);
     data.append('car[description]', carData.description);
@@ -34,6 +41,7 @@ const AddCar = () => {
     dispatch(createCar(data)).then(() => {
       gohome();
       toast.info('Created Car Successfully');
+      setIsLoading(false);
     });
   };
 
@@ -142,7 +150,7 @@ const AddCar = () => {
           type="submit"
           className="btn btn-primary mb-3"
         >
-          Add
+          {isLoading ? <img src={loader} alt="loading" className="spinner" /> : 'Add Car'}
         </button>
       </form>
     </div>

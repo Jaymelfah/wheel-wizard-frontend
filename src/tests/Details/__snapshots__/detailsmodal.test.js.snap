@@ -2,31 +2,30 @@
 
 exports[`Modal renders correctly 1`] = `
 <div>
-  <form>
+  <form
+    style="display: flex; flex-direction: column;"
+  >
     <h3>
-      Fill the fieds below
+      Fill the fields below
     </h3>
     <label
+      class="d-flex flex-column"
       for="carName"
     >
       Car Name:
-    </label>
-    <select
-      id="carName"
-    >
-      <option
-        value="Car 1"
+      <select
+        id="carName"
       >
-        Car 1
-      </option>
-    </select>
-    <label
-      for="select_city"
-    >
-      Select a city
+        <option
+          value="Car 1"
+        >
+          Car 1
+        </option>
+      </select>
     </label>
     <div
       class="select css-b62m3t-container"
+      id="select-city"
     >
       <span
         class="css-1f43avz-a11yText-A11yText"
@@ -39,7 +38,7 @@ exports[`Modal renders correctly 1`] = `
         class="css-1f43avz-a11yText-A11yText"
       />
       <div
-        class=" css-1k4xn47-control"
+        class=" css-1w39g0f-control"
       >
         <div
           class=" css-1fdsijx-ValueContainer"
@@ -48,7 +47,7 @@ exports[`Modal renders correctly 1`] = `
             class=" css-1jqq78o-placeholder"
             id="react-select-2-placeholder"
           >
-            Select...
+            Select a city
           </div>
           <div
             class=" css-qbdosj-Input"
@@ -60,6 +59,7 @@ exports[`Modal renders correctly 1`] = `
               aria-expanded="false"
               aria-haspopup="true"
               aria-labelledby="select_city"
+              aria-required="true"
               autocapitalize="none"
               autocomplete="off"
               autocorrect="off"
@@ -104,22 +104,24 @@ exports[`Modal renders correctly 1`] = `
       for="duration"
     >
       Duration:
+      <input
+        id="duration"
+        required=""
+        type="number"
+        value=""
+      />
     </label>
-    <input
-      id="duration"
-      type="number"
-      value=""
-    />
     <label
       for="reservationDate"
     >
       Reservation Date:
+      <input
+        id="reservationDate"
+        required=""
+        type="date"
+        value=""
+      />
     </label>
-    <input
-      id="reservationDate"
-      type="date"
-      value=""
-    />
     <button
       type="submit"
     >

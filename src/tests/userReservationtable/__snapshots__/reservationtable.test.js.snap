@@ -5,63 +5,27 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <table
-        class="table table-striped table-bordered table-hover"
+      <div
+        class="center"
       >
-        <thead>
-          <tr>
-            <th>
-              ID
-            </th>
-            <th>
-              City
-            </th>
-            <th>
-              Car_ID
-            </th>
-            <th>
-              Date
-            </th>
-            <th>
-              Duration
-            </th>
-            <th>
-              Delete
-            </th>
-          </tr>
-        </thead>
-        <tbody />
-      </table>
+        <img
+          alt="loading"
+          class="loading-cars"
+          src="loader.gif"
+        />
+      </div>
     </div>
   </body>,
   "container": <div>
-    <table
-      class="table table-striped table-bordered table-hover"
+    <div
+      class="center"
     >
-      <thead>
-        <tr>
-          <th>
-            ID
-          </th>
-          <th>
-            City
-          </th>
-          <th>
-            Car_ID
-          </th>
-          <th>
-            Date
-          </th>
-          <th>
-            Duration
-          </th>
-          <th>
-            Delete
-          </th>
-        </tr>
-      </thead>
-      <tbody />
-    </table>
+      <img
+        alt="loading"
+        class="loading-cars"
+        src="loader.gif"
+      />
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

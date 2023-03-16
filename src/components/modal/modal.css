@@ -1,4 +1,4 @@
-form {
+/* form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -52,4 +52,4 @@ button[type="submit"]:hover {
   .modal {
     width: 50%;
   }
-}
+} */

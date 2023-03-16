@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { getAllCars, deleteCar } from '../../redux/deletecar/deletecar';
 import trashcan from '../../assets/trash.gif';
 import './deletecar.css';
+import loaders from '../../assets/loader.gif';
 
 const RemoveCar = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,8 @@ const RemoveCar = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="center"><img className="loading-cars" src={loaders} alt="loading" /></div>);
   }
 
   if (error) {
