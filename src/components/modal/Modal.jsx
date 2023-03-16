@@ -34,14 +34,19 @@ const Modal = ({ selectedCity }) => {
     setIsLoading(true);
     const selectedCar = cars.find((car) => car.car_name === carName);
     const carId = selectedCar ? selectedCar.id : null;
+    const selectedCityIsValid = selectedCity && selectedCity.trim().length > 0;
+    if (!selectedCityIsValid) {
+      toast.error('Please Close the Popup and Select a City');
+      setIsLoading(false);
+      return;
+    }
     const data = {
       reservation_date: reservationDate,
       duration,
       car_id: carId,
-      city: selectedCity,
+      city: selectedCity.trim(),
     };
     dispatch(addReservation(data)).then(() => {
-      console.log('hellooooo');
       toast.info('Successfully made a reservation');
       dispatch(fetchReservations()).then(() => gohome());
       setIsLoading(false);
@@ -55,7 +60,7 @@ const Modal = ({ selectedCity }) => {
       <h3>Fill the fieds below</h3>
 
       <label htmlFor="carName">Car Name:</label>
-      <select id="carName" value={carName} onChange={(e) => setCarName(e.target.value)}>
+      <select id="carName" value={carName} onChange={(e) => setCarName(e.target.value)} required>
         <option value="">Select a car</option>
         {cars.map((car) => (
           <option key={car.id} value={car.car_name}>{car.car_name}</option>
@@ -68,6 +73,7 @@ const Modal = ({ selectedCity }) => {
         id="duration"
         value={duration}
         onChange={(e) => setDuration(e.target.value)}
+        required
       />
 
       <label htmlFor="reservationDate">Reservation Date:</label>
@@ -76,6 +82,7 @@ const Modal = ({ selectedCity }) => {
         id="reservationDate"
         value={reservationDate}
         onChange={(e) => setReservationDate(e.target.value)}
+        required
       />
 
       <button type="submit">{isLoading ? <img src={loader} alt="loading" className="spinner" /> : 'Book Reservation'}</button>

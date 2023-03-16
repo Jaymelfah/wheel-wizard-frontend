@@ -4,23 +4,26 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 import './modal.css';
 import { useNavigate } from 'react-router-dom';
 import { addReservation, fetchReservations } from '../../redux/reservations/reservation';
+import loader from '../../assets/loader2.gif';
 
 const cities = [
-  { value: 'new-york', label: 'New York' },
-  { value: 'los-angeles', label: 'Los Angeles' },
-  { value: 'san-francisco', label: 'San Francisc' },
-  { value: 'bradenton-beach', label: 'Bradenton Beach' },
-  { value: 'charlottetown', label: 'Charlottetown' },
-  { value: 'bankog', label: 'Bankog' },
+  { value: 'New York', label: 'New York' },
+  { value: 'Los Angeles', label: 'Los Angeles' },
+  { value: 'Oregon', label: 'Oregon' },
+  { value: 'Bradenton Beach', label: 'Bradenton Beach' },
+  { value: 'Charlottetown', label: 'Charlottetown' },
+  { value: 'Bangkog', label: 'Bangkog' },
   { value: 'Beijing', label: 'Beijing' },
 ];
 
 const Modal = ({ selectedCar, setIsModalOpen }) => {
   const [duration, setDuration] = useState('');
   const [reservationDate, setReservationDate] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const gohome = () => navigate('/myreservations');
@@ -28,16 +31,26 @@ const Modal = ({ selectedCar, setIsModalOpen }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true);
     const carId = selectedCar ? selectedCar.id : null;
+    const selectedCityIsValid = selectedCity;
+    if (!selectedCityIsValid) {
+      toast.error('Please Select a City');
+      setIsLoading(false);
+      return;
+    }
     const data = {
       reservation_date: reservationDate,
       duration,
       car_id: carId,
       city: selectedCity.value,
     };
-    dispatch(addReservation(data));
-    dispatch(fetchReservations()).then(() => gohome());
-    setIsModalOpen(false);
+    dispatch(addReservation(data)).then(() => {
+      toast.info('Successfully made a reservation');
+      dispatch(fetchReservations()).then(() => gohome());
+      setIsLoading(false);
+      setIsModalOpen(false);
+    });
   };
 
   return (
@@ -89,7 +102,7 @@ const Modal = ({ selectedCar, setIsModalOpen }) => {
         onChange={(e) => setReservationDate(e.target.value)}
       />
 
-      <button type="submit">Book Reservation</button>
+      <button type="submit">{isLoading ? <img src={loader} alt="loading" className="spinner" /> : 'Book Reservation'}</button>
 
       <style>
         {`
