@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import './modal.css';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { getCars } from '../../redux/cars/cars';
