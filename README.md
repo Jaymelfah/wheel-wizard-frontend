@@ -28,6 +28,11 @@
 
 **[Wheel-Wizard]** is a Final Capstone Project based on an app to book an appointment to try a car. This app is both mobile and desktop responsive. The app allow users to sign_up, login, book an appointment by reservation, can check appointment and cancel appointment, and logout as well.
 
+### Kanban Board
+This is a [Link](https://github.com/users/Jaymelfah/projects/4) to our Kanban Board
+
+This is the initial state of our Kanban board![image (1)](https://user-images.githubusercontent.com/106558709/225645735-121fe7ba-3a9e-48c1-8f89-767757fa4a83.png)
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
