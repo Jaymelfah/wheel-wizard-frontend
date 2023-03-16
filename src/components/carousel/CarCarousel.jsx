@@ -17,17 +17,18 @@ const CarCarousel = ({ cars }) => {
     if (index < cars.length - 3) {
         setIndex(index - 3);
       } else {
-        setIndex(0);
+        setIndex(index - 3);
       }
   };
 
   const handleNext = () => {
     if (index < cars.length - 3) {
       setIndex(index + 3);
-    } else {
-      setIndex(0);
-    }
+    } 
   };
+
+  const isPrevDisabled = index === 0;
+  const isNextDisabled = index === cars.length;
 
   return (
     <>
@@ -36,6 +37,7 @@ const CarCarousel = ({ cars }) => {
           type="button"
           onClick={handlePrev}
           className="pagination-btn btn left"
+          disabled={isPrevDisabled}
         >
           <RxIcons.RxTriangleLeft size="3em" />
         </button>
@@ -58,6 +60,7 @@ const CarCarousel = ({ cars }) => {
           type="button"
           onClick={handleNext}
           className="pagination-btn btn right"
+          disabled={isNextDisabled}
         >
           <RxIcons.RxTriangleRight size="3em" />
         </button>
