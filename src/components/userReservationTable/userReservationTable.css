@@ -34,6 +34,19 @@
   background-color: rgba(150, 191, 2, 0.829);
 }
 
+.center {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-cars {
+  width: 60px;
+  height: 60px;
+}
+
 @media only screen and (max-width: 768px) {
   .table {
     width: 20rem;

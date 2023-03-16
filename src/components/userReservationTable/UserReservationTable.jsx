@@ -11,6 +11,7 @@ import car from '../../assets/car.png';
 import del from '../../assets/del.png';
 import time from '../../assets/time.png';
 import loader from '../../assets/loader2.gif';
+import loaders from '../../assets/loader.gif';
 
 const UserReservationTable = () => {
   const carsData = useSelector((state) => state.cars);
@@ -42,7 +43,8 @@ const UserReservationTable = () => {
   }, [dispatch]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="center"><img className="loading-cars" src={loaders} alt="loading" /></div>);
   }
 
   if (error) {
