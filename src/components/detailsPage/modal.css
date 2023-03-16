@@ -53,12 +53,6 @@ button[type="submit"]:hover {
   border-radius: 50%;
 }
 
-
-/* .css-b62m3t-container {
-  align-self: flex-start !important;
-  height: 2rem;
-} */
-
 @media (max-width: 768px) {
   form {
     width: 90%;
@@ -74,9 +68,6 @@ button[type="submit"]:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .modal-content {
     margin-top: -30%;
     padding-bottom: 3rem;
   }

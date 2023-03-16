@@ -4,7 +4,7 @@
     height: 5rem;
   }
 
-  .carousel-indicators{
+  .carousel-indicators {
     background-color: rgb(152, 193, 15);
     border-radius: 42px;
     position: fixed !important;
