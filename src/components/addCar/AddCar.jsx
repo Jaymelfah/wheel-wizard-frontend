@@ -25,6 +25,11 @@ const AddCar = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsLoading(true);
+    if (!carData.image) {
+      toast.error('Please select an image for the car');
+      setIsLoading(false);
+      return;
+    }
     const data = new FormData();
     data.append('car[name]', carData.name);
     data.append('car[description]', carData.description);
