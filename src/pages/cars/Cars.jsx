@@ -4,7 +4,7 @@ import { getCars } from '../../redux/cars/cars';
 import './cars.css';
 import CarCarousel from '../../components/carousel/CarCarousel';
 
-function Cars() {
+const Cars = () => {
   const [currentUser, setCurrentUser] = useState('');
   const cars = useSelector((state) => state.cars);
   const dispatch = useDispatch();
@@ -24,6 +24,6 @@ function Cars() {
       </div>
     </div>
   );
-}
+};
 
 export default Cars;

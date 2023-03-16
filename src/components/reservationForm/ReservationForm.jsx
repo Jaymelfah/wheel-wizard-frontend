@@ -13,7 +13,7 @@ const cities = [
   { value: 'Beijing', label: 'Beijing' },
 ];
 
-function ReservationForm() {
+const ReservationForm = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCity, setSelectedCity] = useState('');
 
@@ -100,6 +100,6 @@ function ReservationForm() {
       )}
     </div>
   );
-}
+};
 
 export default ReservationForm;
