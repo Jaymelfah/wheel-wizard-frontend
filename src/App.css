@@ -1,0 +1,17 @@
+.app {
+  display: flex;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+}

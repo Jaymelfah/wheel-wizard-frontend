@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Form renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="form-cont"
+      >
+        <form
+          class="login-form"
+        >
+          <h1
+            class="sidebar-title-signup pt-3 ml-5"
+          >
+            WheelWizard
+          </h1>
+          <div
+            class="mb-3"
+          >
+            <input
+              class="form-control"
+              id="formBasicEmail"
+              placeholder="Enter email"
+              required=""
+              type="email"
+              value=""
+            />
+          </div>
+          <div
+            class="mb-3"
+          >
+            <input
+              class="form-control"
+              id="formBasicPassword"
+              placeholder="Password"
+              required=""
+              type="password"
+              value=""
+            />
+          </div>
+          <button
+            class="btn btn-primary"
+            type="submit"
+          >
+            Login
+          </button>
+          <div
+            class="d-flex account"
+          >
+            <p>
+              No account yet? Click here to Sign Up
+            </p>
+            <button
+              class="btn plain-btn btn btn-white"
+              type="button"
+            >
+              Sign up
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="form-cont"
+    >
+      <form
+        class="login-form"
+      >
+        <h1
+          class="sidebar-title-signup pt-3 ml-5"
+        >
+          WheelWizard
+        </h1>
+        <div
+          class="mb-3"
+        >
+          <input
+            class="form-control"
+            id="formBasicEmail"
+            placeholder="Enter email"
+            required=""
+            type="email"
+            value=""
+          />
+        </div>
+        <div
+          class="mb-3"
+        >
+          <input
+            class="form-control"
+            id="formBasicPassword"
+            placeholder="Password"
+            required=""
+            type="password"
+            value=""
+          />
+        </div>
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          Login
+        </button>
+        <div
+          class="d-flex account"
+        >
+          <p>
+            No account yet? Click here to Sign Up
+          </p>
+          <button
+            class="btn plain-btn btn btn-white"
+            type="button"
+          >
+            Sign up
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

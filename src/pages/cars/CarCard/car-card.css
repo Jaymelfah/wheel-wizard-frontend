@@ -1,0 +1,53 @@
+.car-card {
+  align-items: center;
+  justify-content: flex-end;
+  height: 37rem;
+}
+
+.car-image {
+  height: auto;
+  width: 19rem;
+}
+
+.cars-icons svg {
+  border: 1px solid gray;
+  border-radius: 50%;
+  margin: 0 10px;
+  padding: 6px;
+  box-sizing: content-box;
+}
+
+.link {
+  color: black;
+}
+
+.back-for-cars {
+  position: absolute;
+  height: 18rem;
+  width: 19rem;
+  z-index: -111111111;
+  top: 11%;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.carload {
+  height: 18rem;
+  width: 19rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .car-card {
+    height: auto;
+  }
+
+  .car-image {
+    height: auto;
+    width: 21rem;
+  }
+
+  .car-name {
+    font-size: 3rem;
+    width: 100%;
+  }
+}

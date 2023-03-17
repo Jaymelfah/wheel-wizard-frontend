@@ -1,0 +1,88 @@
+.del-container {
+  margin-top: 5%;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(../../assets/delete-car.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.del-container::before {
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(150, 191, 2, 0.929); /* set the background color with transparency */
+  position: absolute; /* make the pseudo-element positioned relative to the container */
+}
+
+.del-list {
+  display: flex;
+  width: 50%;
+  align-items: stretch;
+  flex-direction: column;
+  padding-left: 0;
+  background-color: white;
+  z-index: 10;
+  box-shadow: -1px 4px 5px 0 rgba(42, 43, 42, 0.64);
+  -webkit-box-shadow: -1px 4px 5px 0 rgba(25, 26, 25, 0.64);
+  -moz-box-shadow: -1px 4px 5px 0 rgba(38, 38, 36, 0.64);
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.images {
+  width: 100px;
+}
+
+.del-car-image {
+  width: 60px;
+  margin-left: 3rem;
+  height: 60px;
+  object-fit: contain;
+}
+
+.cars {
+  flex: 0.2;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.del {
+  width: 80px; /* adjust to your desired size */
+}
+
+.del-header {
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 0.8rem;
+}
+
+.trash {
+  margin-top: 0.5rem;
+  width: 20px;
+  height: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .del-container {
+    margin-top: 5rem;
+    height: auto;
+  }
+
+  .del-list {
+    width: 92%;
+    margin-top: 3rem;
+  }
+
+  .del-car-image {
+    margin-left: 0;
+  }
+}

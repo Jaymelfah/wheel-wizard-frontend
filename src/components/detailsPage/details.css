@@ -1,0 +1,123 @@
+
+.main-holder {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.rotate-image {
+  transform: scaleX(-1);
+  transition: transform 0.5s ease-in-out;
+}
+
+.details-holder {
+  padding: 20px;
+  flex-direction: row;
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  align-items: center;
+}
+
+.d-car-image {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  transition: transform 0.5s ease-in-out;
+}
+
+.circle {
+  width: 100%;
+  max-width: 117px;
+  height: auto;
+  margin-top: 20px;
+}
+
+.name {
+  font-size: 24px !important;
+  margin-bottom: 10px;
+  font-weight: bold !important;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rotate-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-top: 70px;
+  background: none;
+}
+
+.car-info {
+  margin-left: 5%;
+  flex-grow: 1;
+  width: 100%;
+  box-sizing: unset;
+}
+
+.discover {
+  color: black;
+  font-weight: 800;
+  margin-top: 30px;
+}
+
+.link {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.car-info button {
+  font-size: 23px;
+  margin-top: 50px;
+  border-radius: 30px;
+  float: right;
+  width: 141px;
+}
+
+.car-info ul {
+  list-style: none;
+  width: 100%;
+  padding: 0 !important;
+}
+
+.car-info li {
+  padding: 11px;
+  font-weight: 500;
+  font-size: larger;
+}
+
+.car-info li:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.loading-car {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .details-holder {
+    flex-direction: column;
+    margin-top: 70px;
+  }
+
+  .car-info {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  .rotate-btn {
+    margin-top: 10px;
+  }
+}

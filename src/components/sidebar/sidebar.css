@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Dr+Sugiyama&display=swap");
+
+.sidebar-container {
+  height: 100vh;
+  width: fit-content;
+  visibility: hidden;
+  z-index: 99999;
+}
+
+.sidebar-active {
+  visibility: visible !important;
+}
+
+.sidebar-title {
+  font-family: "Dr Sugiyama", cursive;
+  text-decoration: underline;
+  transform: rotate(-15deg);
+  text-align: center;
+  color: #4f4f4f;
+}
+
+.toggle-sidebar-btn {
+  background-color: #98c10f;
+  width: 76px;
+  border-bottom-right-radius: 40px;
+  border-top-right-radius: 40px;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  border: none;
+  padding-right: 1rem;
+  z-index: 999999999;
+  box-shadow: -1px 4px 5px 0 rgba(42, 43, 42, 0.769);
+  -webkit-box-shadow: -1px 4px 5px 0 rgba(25, 26, 25, 0.64);
+  -moz-box-shadow: -1px 4px 5px 0 rgba(38, 38, 36, 0.703);
+  visibility: visible !important;
+  position: fixed;
+  bottom: 10%;
+  left: 15rem;
+}
+
+.toggle-sidebar-btn.move {
+  left: 0;
+}
+
+.logout-btn {
+  margin-top: 10rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .sidebar-container {
+    display: none !important;
+  }
+
+  .toggle-sidebar-btn {
+    display: none !important;
+  }
+}

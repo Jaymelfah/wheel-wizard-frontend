@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
+.cars-section-title {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  margin-top: 7rem;
+}
+
+.cars-container {
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.cars-box {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  position: relative;
+  scroll-snap-type: x mandatory;
+  width: 88rem;
+  justify-content: space-between;
+  gap: 10rem;
+}
+
+.cars-box::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.cars-box::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.cars-container .pagination-btn {
+  background-color: #98c10f;
+  width: 76px;
+  border-bottom-right-radius: 40px;
+  border-top-right-radius: 40px;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  border: none;
+  padding: 8px 0;
+  z-index: 1;
+  transform: translateY(-50%);
+  position: absolute;
+  margin: 0;
+}
+
+.cars-container .pagination-btn.left {
+  left: 0;
+}
+
+.cars-container .pagination-btn.right {
+  border-bottom-left-radius: 40px;
+  border-top-left-radius: 40px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  justify-content: flex-start;
+  right: 0;
+}
+
+.user-name {
+  align-self: flex-end;
+  padding-right: 3rem;
+  font-size: 1.5rem;
+  color: #98c10f;
+}
+
+@media only screen and (max-width: 768px) {
+  .cars-section-title {
+    margin-top: 7rem;
+  }
+
+  .cars-container {
+    gap: 0;
+    justify-content: flex-start;
+  }
+
+  .cars-container .pagination-btn {
+    display: none !important;
+  }
+}
